@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "281819274967",
+    "firebase_url": "https://brindavan-ff63c.firebaseio.com",
+    "project_id": "brindavan-ff63c",
+    "storage_bucket": "brindavan-ff63c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:281819274967:android:02b7055bb1adbcd2b11a92",
+        "android_client_info": {
+          "package_name": "net.innovexit.brindavan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "281819274967-eiro0hga1b0gldidk0ocp5dg43esps9r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZtmO90H5rxGNvWmTLYDjEnYp4bkQDzic"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "281819274967-eiro0hga1b0gldidk0ocp5dg43esps9r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

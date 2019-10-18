@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="net.innovexit.brindavan">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <application
+        android:name=".application.BrindavanApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/shr_app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Shrine"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity android:name=".activities.ChatActivity"></activity>
+        <activity android:name=".activities.CameraActivity" />
+        <activity android:name=".activities.SecurityManagerActivity" />
+        <activity android:name=".activities.AppAdminActivity" />
+        <activity android:name=".activities.SignUpActivity" />
+        <activity android:name=".activities.ServiceProviderActivity" />
+        <activity android:name=".activities.UnannouncedActivity" />
+        <activity android:name=".activities.SoSActivity" />
+        <activity android:name=".activities.HelpGuestActivity" /> <!-- android:screenOrientation="portrait" /> -->
+        <activity android:name=".activities.ServiceActivity" />
+        <activity android:name=".activities.HireHelpsActivity" />
+        <activity android:name=".activities.DailyHelpsActivity" />
+        <activity android:name=".activities.CommunicateGateActivity" />
+        <activity android:name=".activities.ResidentDirActivity" />
+        <activity android:name=".activities.FamilyMembersActivity" />
+        <activity android:name=".activities.VehicleLogsActivity" />
+        <activity android:name=".activities.NoticeBoardActivity" />
+        <activity android:name=".activities.HomeActivity" />
+        <activity android:name=".activities.LoginActivity" />
+        <activity android:name=".activities.WelcomeActivity">
+            <meta-data
+                android:name="com.google.firebase.ml.vision.DEPENDENCIES"
+                android:value="barcode" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

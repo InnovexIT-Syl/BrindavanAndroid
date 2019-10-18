@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="net.innovexit.brindavan.activities.CommunicateGateActivity">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/communicate_app_bar"
+            style="@style/Widget.Shrine.Toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:paddingStart="12dp"
+            android:paddingLeft="12dp"
+            android:paddingEnd="12dp"
+            android:paddingRight="12dp"
+            app:contentInsetStart="0dp"
+            app:navigationIcon="@drawable/backspace"
+            app:title="Communicate With Gate" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:id="@+id/commuMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/nav_menu"
+            style="@style/Widget.Shrine.Backdrop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingTop="40dp"
+            android:paddingBottom="130dp">
+
+            <include layout="@layout/shr_backdrop" />
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:id="@+id/communicateContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nav_menu">
+
+            <TextView
+                android:id="@+id/communicateGateTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/communicate_with_gate"
+                android:textAllCaps="true"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/communicateSubTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/communicateGateTitle"
+                android:layout_marginStart="20dp"
+                android:text="Communicate with Service Providers"
+                android:textColor="@color/textColorPrimary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/communicateGateTitle"
+                android:layout_marginLeft="5dp"
+                android:layout_toEndOf="@+id/communicateSubTitle"
+                android:text="@string/shr_app_name"
+                android:textColor="#2196F3" />
+
+            <TextView
+                android:id="@+id/communicateGateTitleHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/communicateSubTitle"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="sans-serif"
+                android:text="Communicate with gate"
+                android:textAlignment="center"
+                android:textColor="#00BCD4"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/apartmentName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/communicateGateTitleHeader"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/background_style"
+                android:fontFamily="sans-serif"
+                android:padding="10dp"
+                android:text="Communications"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/apartmentName"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="15dp">
+
+                <ImageButton
+                    android:id="@+id/image_1"
+                    android:layout_width="140dp"
+                    android:layout_height="170dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/image_background"
+                    android:padding="25dp"
+                    android:src="@drawable/parcel"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@+id/image_1"
+                    android:background="@drawable/text_background"
+                    android:text="Parcel Receive"
+                    android:textAlignment="center"
+                    android:textColor="#FFFF"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/image_2"
+                    android:layout_width="140dp"
+                    android:layout_height="170dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toEndOf="@+id/image_1"
+                    android:background="@drawable/image_background"
+                    android:padding="25dp"
+                    android:src="@drawable/guest" />
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="30dp"
+                    android:layout_alignStart="@+id/image_1"
+                    android:layout_alignBottom="@+id/image_2"
+                    android:layout_marginStart="155dp"
+                    android:background="@drawable/text_background"
+                    android:text="Guest"
+                    android:textAlignment="center"
+                    android:textColor="#FFFF"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/image_3"
+                    android:layout_width="140dp"
+                    android:layout_height="170dp"
+                    android:layout_below="@id/image_1"
+                    android:layout_marginTop="13dp"
+                    android:background="@drawable/image_background"
+                    android:padding="25dp"
+                    android:src="@drawable/police_officer" />
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@+id/image_3"
+                    android:background="@drawable/text_background"
+                    android:text="Police Officer"
+                    android:textAlignment="center"
+                    android:textColor="#FFFF"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/image_4"
+                    android:layout_width="140dp"
+                    android:layout_height="170dp"
+                    android:layout_below="@id/image_2"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_toEndOf="@id/image_3"
+                    android:background="@drawable/image_background"
+                    android:padding="25dp"
+                    android:src="@drawable/driver" />
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="30dp"
+                    android:layout_alignStart="@+id/image_1"
+                    android:layout_alignBottom="@+id/image_4"
+                    android:layout_marginStart="154dp"
+                    android:background="@drawable/text_background"
+                    android:text="Driver"
+                    android:textAlignment="center"
+                    android:textColor="#FFFF"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/image_5"
+                    android:layout_width="140dp"
+                    android:layout_height="170dp"
+                    android:layout_below="@id/image_3"
+                    android:layout_marginTop="13dp"
+                    android:background="@drawable/image_background"
+                    android:padding="25dp"
+                    android:src="@drawable/admin_" />
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@+id/image_5"
+                    android:background="@drawable/text_background"
+                    android:text="Admin Panel"
+                    android:textAlignment="center"
+                    android:textColor="#FFFF"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/image_6"
+                    android:layout_width="140dp"
+                    android:layout_height="170dp"
+                    android:layout_below="@id/image_4"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_toEndOf="@id/image_5"
+                    android:background="@drawable/image_background"
+                    android:padding="25dp"
+                    android:src="@drawable/taxi" />
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="30dp"
+                    android:layout_alignStart="@+id/image_5"
+                    android:layout_alignBottom="@+id/image_6"
+                    android:layout_marginStart="154dp"
+                    android:background="@drawable/text_background"
+                    android:text="Taxi Cab"
+                    android:textAlignment="center"
+                    android:textColor="#FFFF"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="net.innovexit.brindavan.activities.HomeActivity">
+
+    <ScrollView
+        android:id="@+id/hireMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/nav_menu"
+            style="@style/Widget.Shrine.Backdrop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingTop="40dp"
+            android:paddingBottom="130dp">
+
+            <include layout="@layout/shr_backdrop" />
+        </LinearLayout>
+    </ScrollView>
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/hire_app_bar"
+            style="@style/Widget.Shrine.Toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:paddingStart="12dp"
+            android:paddingLeft="12dp"
+            android:paddingEnd="12dp"
+            android:paddingRight="12dp"
+            app:contentInsetStart="0dp"
+            app:navigationIcon="@drawable/backspace"
+            app:title="Hire New Helps" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="9dp"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:id="@+id/hireContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar">
+
+            <TextView
+                android:id="@+id/communicateGateTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="sans-serif"
+                android:text="Hire New Help"
+                android:textAllCaps="true"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/communicateSubTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/communicateGateTitle"
+                android:layout_marginLeft="20dp"
+                android:text="All New Helps on Complex"
+                android:textColor="@color/textColorPrimary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/communicateGateTitle"
+                android:layout_marginLeft="5dp"
+                android:layout_toEndOf="@+id/communicateSubTitle"
+                android:text="@string/shr_app_name"
+                android:textColor="#2196F3" />
+
+            <TextView
+                android:id="@+id/communicateGateTitleHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/communicateSubTitle"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="sans-serif"
+                android:text="Hire New Help "
+                android:textAlignment="center"
+                android:textColor="#00BCD4"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/apartmentName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/communicateGateTitleHeader"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/background_style"
+                android:fontFamily="sans-serif"
+                android:padding="10dp"
+                android:text="New Helps "
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/communicateContainerItems"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/apartmentName"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:paddingTop="8dp">
+
+                <ImageButton
+                    android:id="@+id/image_1"
+                    android:layout_width="140dp"
+                    android:layout_height="170dp"
+                    android:background="@drawable/image_background"
+                    android:padding="25dp"
+                    android:src="@drawable/occupation"
+                    android:textAlignment="center"/>
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@+id/image_1"
+                    android:background="@drawable/text_background"
+                    android:text="Maid"
+                    android:textAlignment="center"
+                    android:textColor="#FFFF"
+                    android:textSize="18dp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <ImageButton
+                    android:id="@+id/image_2"
+                    android:layout_width="140dp"
+                    android:layout_height="170dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toEndOf="@+id/image_1"
+                    android:background="@drawable/image_background"
+                    android:padding="25dp"
+                    android:src="@drawable/guest" />
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="30dp"
+                    android:layout_alignStart="@+id/image_1"
+                    android:layout_alignBottom="@+id/image_2"
+                    android:layout_marginStart="155dp"
+                    android:background="@drawable/text_background"
+                    android:text="Guest"
+                    android:textAlignment="center"
+                    android:textColor="#FFFF"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+
+                <ImageButton
+                    android:id="@+id/image_3"
+                    android:layout_width="140dp"
+                    android:layout_height="170dp"
+                    android:layout_below="@id/image_1"
+                    android:layout_marginTop="13dp"
+                    android:background="@drawable/image_background"
+                    android:padding="25dp"
+                    android:src="@drawable/police_officer">
+                </ImageButton>
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@+id/image_3"
+                    android:background="@drawable/text_background"
+                    android:text="Police Officer"
+                    android:textAlignment="center"
+                    android:textColor="#FFFF"
+                    android:textSize="18dp"
+                    android:textStyle="bold">
+                </TextView>
+
+                <ImageButton
+                    android:id="@+id/image_4"
+                    android:layout_width="140dp"
+                    android:layout_height="170dp"
+                    android:layout_below="@id/image_1"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_toEndOf="@id/image_3"
+                    android:background="@drawable/image_background"
+                    android:padding="25dp"
+                    android:src="@drawable/driver">
+                </ImageButton>
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="30dp"
+                    android:layout_alignStart="@+id/image_1"
+                    android:layout_alignBottom="@+id/image_4"
+                    android:layout_marginStart="154dp"
+                    android:background="@drawable/text_background"
+                    android:text="Driver"
+                    android:textAlignment="center"
+                    android:textColor="#FFFF"
+                    android:textSize="18dp"
+                    android:textStyle="bold">
+                </TextView>
+
+                <ImageButton
+                    android:id="@+id/image_5"
+                    android:layout_width="140dp"
+                    android:layout_height="170dp"
+                    android:layout_below="@id/image_3"
+                    android:layout_marginTop="13dp"
+                    android:background="@drawable/image_background"
+                    android:padding="25dp"
+                    android:src="@drawable/admin_">
+                </ImageButton>
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@+id/image_5"
+                    android:background="@drawable/text_background"
+                    android:text="Admin Panel"
+                    android:textAlignment="center"
+                    android:textColor="#FFFF"
+                    android:textSize="18dp"
+                    android:textStyle="bold">
+                </TextView>
+
+                <ImageButton
+                    android:id="@+id/image_6"
+                    android:layout_width="140dp"
+                    android:layout_height="170dp"
+                    android:layout_below="@id/image_4"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_toEndOf="@id/image_5"
+                    android:background="@drawable/image_background"
+                    android:padding="25dp"
+                    android:src="@drawable/taxi">
+                </ImageButton>
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="30dp"
+                    android:layout_alignStart="@+id/image_5"
+                    android:layout_alignBottom="@+id/image_6"
+                    android:layout_marginStart="154dp"
+                    android:background="@drawable/text_background"
+                    android:text="Taxi Cab"
+                    android:textAlignment="center"
+                    android:textColor="#FFFF"
+                    android:textSize="18dp"
+                    android:textStyle="bold">
+                </TextView>
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
+

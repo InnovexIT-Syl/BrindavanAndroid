@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/home"
+        style="@style/Widget.Shrine.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="@string/home_label"
+        android:textAlignment="textStart"
+        app:icon="@drawable/home"
+        app:iconTint="@color/textColorPrimary"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/notice"
+        style="@style/Widget.Shrine.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="@string/noticeboard_label"
+        android:textAlignment="textStart"
+        app:icon="@drawable/notice"
+        app:iconTint="@color/textColorPrimary"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/vehicle"
+        style="@style/Widget.Shrine.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="@string/vehiclelogs_label"
+        android:textAlignment="textStart"
+        app:icon="@drawable/vehicle"
+        app:iconTint="@color/textColorPrimary"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/family"
+        style="@style/Widget.Shrine.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="@string/family_members"
+        android:textAlignment="textStart"
+        app:icon="@drawable/family"
+        app:iconTint="@color/textColorPrimary" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/resident"
+        style="@style/Widget.Shrine.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="@string/resident_directory"
+        android:textAlignment="textStart"
+        app:icon="@drawable/resident"
+        app:iconTint="@color/textColorPrimary"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/communicate"
+        style="@style/Widget.Shrine.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="@string/communicate_with_gate"
+        android:textAlignment="textStart"
+        app:icon="@drawable/communicate"
+        app:iconTint="@color/textColorPrimary"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/helps"
+        style="@style/Widget.Shrine.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="@string/daily_helps"
+        android:textAlignment="textStart"
+        app:icon="@drawable/helps"
+        app:iconTint="@color/textColorPrimary"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/hire"
+        style="@style/Widget.Shrine.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="@string/hire_new_helps"
+        android:textAlignment="textStart"
+        app:icon="@drawable/hire"
+        app:iconTint="@color/textColorPrimary"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/service"
+        style="@style/Widget.Shrine.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="@string/service_requests"
+        android:textAlignment="textStart"
+        app:icon="@drawable/service"
+        app:iconTint="@color/textColorPrimary" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/help_guest"
+        style="@style/Widget.Shrine.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="@string/help_guests"
+        android:textAlignment="textStart"
+        app:icon="@drawable/help_guest"
+        app:iconTint="@color/textColorPrimary"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/sos"
+        style="@style/Widget.Shrine.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="@string/sos"
+        android:textAlignment="textStart"
+        app:icon="@drawable/sos"
+        app:iconTint="@color/textColorPrimary"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/unannounced"
+        style="@style/Widget.Shrine.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="@string/unannounced_guest"
+        android:textAlignment="textStart"
+        app:icon="@drawable/unannounced"
+        app:iconTint="@color/textColorPrimary"/>
+
+    <View
+        android:layout_width="200dp"
+        android:layout_height="2dp"
+        android:layout_margin="12dp"
+        android:background="?android:attr/textColorPrimary" />
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.Shrine.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="@string/shr_account_label"
+        android:textAlignment="textStart"
+        app:icon="@drawable/complex"
+        app:iconTint="@color/textColorPrimary"/>
+    <View
+        android:layout_width="200dp"
+        android:layout_height="2dp"
+        android:layout_margin="12dp"
+        android:background="?android:attr/textColorPrimary" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/admin"
+        style="@style/Widget.Shrine.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="@string/admin"
+        android:textAlignment="textStart"
+        app:icon="@drawable/admin"
+        app:iconTint="@color/textColorPrimary"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/service_provider"
+        style="@style/Widget.Shrine.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="Service Provider"
+        android:textAlignment="textStart"
+        app:icon="@drawable/service_provider"
+        app:iconTint="@color/textColorPrimary"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/security_manager"
+        style="@style/Widget.Shrine.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="Security Manager"
+        android:textAlignment="textStart"
+        app:icon="@drawable/security_manager"
+        app:iconTint="@color/textColorPrimary"/>
+
+</merge>
