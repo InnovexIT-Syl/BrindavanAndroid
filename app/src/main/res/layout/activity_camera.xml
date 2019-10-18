@@ -38,7 +38,7 @@
             android:layout_height="match_parent"
             android:enabled="false"
             android:background="@drawable/button_style"
-            android:text="SCAN AGAIN"
+            android:text="SCAN AGAIN AGAIN"
             android:textColor="#FFFFFF"
             android:textSize="20dp" />
     </LinearLayout>
