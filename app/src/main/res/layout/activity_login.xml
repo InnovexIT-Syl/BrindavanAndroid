@@ -35,7 +35,7 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/sign_edit_text_style"
             android:hint="@string/username"
-            android:padding="20sp"
+            android:padding="10sp"
             android:textColor="#FFFF" />
 
         <EditText
@@ -61,18 +61,6 @@
             android:textColor="#FFFFFF"
             android:textSize="25sp" />
 
-        <TextView
-            android:id="@+id/createAccount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="goSignUpPage"
-            android:text="Don't have an account?"
-            android:textColor="#0360FF"
-            android:textSize="20dp" />
-       <TextView
-           android:layout_width="205dp"
-           android:layout_height="2dp"
-           android:background="#DDD3D3"/>
     </LinearLayout>
 
 </RelativeLayout>
