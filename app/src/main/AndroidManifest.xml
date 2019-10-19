@@ -24,7 +24,6 @@
         <activity android:name=".activities.CameraActivity" />
         <activity android:name=".activities.SecurityManagerActivity" />
         <activity android:name=".activities.AppAdminActivity" />
-        <activity android:name=".activities.SignUpActivity" />
         <activity android:name=".activities.ServiceProviderActivity" />
         <activity android:name=".activities.UnannouncedActivity" />
         <activity android:name=".activities.SoSActivity" />
