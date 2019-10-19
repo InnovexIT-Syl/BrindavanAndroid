@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "281819274967-3b210lamtd46g964ojcbr3tjeeqt982g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.innovexit.brindavan",
+            "certificate_hash": "889668b75e8f54c9a49b32c3cf5ff66c265edf9d"
+          }
+        },
+        {
+          "client_id": "281819274967-fo1b83a4aju4o29is783fqk1eu4b1jpg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.innovexit.brindavan",
+            "certificate_hash": "b8a9302ec77e345b5b73e6c64fed810365a1857d"
+          }
+        },
+        {
           "client_id": "281819274967-eiro0hga1b0gldidk0ocp5dg43esps9r.apps.googleusercontent.com",
           "client_type": 3
         }

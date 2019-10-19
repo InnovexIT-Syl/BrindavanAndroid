@@ -28,92 +28,173 @@
             app:title="App Admin" />
     </com.google.android.material.appbar.AppBarLayout>
 
-    <RelativeLayout
-        android:id="@+id/communicateContainer"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar">
+        android:layout_below="@+id/toolbar"
+        android:fillViewport="true"
+        android:scrollbars="none">
 
-        <TextView
-            android:id="@+id/communicateGateTitle"
+        <RelativeLayout
+            android:id="@+id/communicateContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="30dp"
-            android:fontFamily="sans-serif"
-            android:text="Admin"
-            android:textAllCaps="true"
-            android:textColor="@color/textColorPrimary"
-            android:textSize="25sp"
-            android:textStyle="bold" />
+            android:layout_below="@id/toolbar">
 
-        <TextView
-            android:id="@+id/communicateSubTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/communicateGateTitle"
-            android:layout_marginStart="20dp"
-            android:text="Admin with Service "
-            android:textColor="@color/textColorPrimary" />
+            <TextView
+                android:id="@+id/communicateGateTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="sans-serif"
+                android:text="Admin"
+                android:textAllCaps="true"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/communicateGateTitle"
-            android:layout_marginLeft="5dp"
-            android:layout_toEndOf="@+id/communicateSubTitle"
-            android:text="@string/shr_app_name"
-            android:textColor="#2196F3" />
+            <TextView
+                android:id="@+id/communicateSubTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/communicateGateTitle"
+                android:layout_marginStart="20dp"
+                android:text="Admin with Service "
+                android:textColor="@color/textColorPrimary" />
 
-        <TextView
-            android:id="@+id/apartmentName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/communicateGateTitle"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/background_style"
-            android:fontFamily="sans-serif"
-            android:padding="10dp"
-            android:text="Activities"
-            android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/communicateGateTitle"
+                android:layout_marginLeft="5dp"
+                android:layout_toEndOf="@+id/communicateSubTitle"
+                android:text="@string/shr_app_name"
+                android:textColor="#2196F3" />
 
-        <LinearLayout
-            android:layout_width="450dp"
-            android:layout_height="240dp"
-            android:layout_below="@id/apartmentName"
-            android:layout_margin="20dp"
-            android:background="@drawable/text_bg_style_1"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="5dp">
-
-            <Button
-                android:id="@+id/btn1"
-                android:layout_width="200dp"
-                android:layout_height="60dp"
-                android:layout_below="@id/toolbar"
+            <TextView
+                android:id="@+id/apartmentName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/communicateGateTitle"
                 android:layout_centerInParent="true"
-                android:background="@drawable/sigin_style"
-                android:gravity="center"
-                android:text="Add Security Guard" />
-            <Button
-                android:id="@+id/btn2"
-                android:layout_width="200dp"
-                android:layout_height="60dp"
-                android:layout_below="@id/toolbar"
-                android:layout_centerInParent="true"
-                android:gravity="center"
-                android:text="Add Manager" />
-            <Button
-                android:id="@+id/btn3"
-                android:layout_width="200dp"
-                android:layout_height="60dp"
-                android:layout_below="@id/toolbar"
-                android:layout_centerInParent="true"
-                android:gravity="center"
-                android:text="Add Member" />
-        </LinearLayout>
+                android:layout_marginTop="40dp"
+                android:background="@drawable/background_style"
+                android:fontFamily="sans-serif"
+                android:padding="10dp"
+                android:text="Activities"
+                android:textStyle="bold" />
 
-    </RelativeLayout>
+            <LinearLayout
+                android:id="@+id/l_1"
+                android:layout_width="450dp"
+                android:layout_height="240dp"
+                android:layout_below="@id/apartmentName"
+                android:layout_margin="20dp"
+                android:background="@drawable/text_bg_style_1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <Button
+                    android:id="@+id/btn1"
+                    android:layout_width="200dp"
+                    android:layout_height="60dp"
+                    android:layout_below="@id/toolbar"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/sigin_style"
+                    android:gravity="center"
+                    android:text="Add Security Guard" />
+
+                <Button
+                    android:id="@+id/btn2"
+                    android:layout_width="200dp"
+                    android:layout_height="60dp"
+                    android:layout_below="@id/toolbar"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="Add Manager" />
+
+                <Button
+                    android:id="@+id/btn3"
+                    android:layout_width="200dp"
+                    android:layout_height="60dp"
+                    android:layout_below="@id/toolbar"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="Add Member" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/l_1"
+                android:layout_margin="20dp"
+                android:background="@drawable/text_bg_style_1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <EditText
+                    android:inputType="text|textMultiLine"
+                    android:id="@+id/barcode_edit_value1"
+                    android:layout_width="270dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:gravity="top"
+                    android:background="@drawable/edit_text_style"
+                    android:hint="Enter Information"
+                    android:padding="10dp"
+                    android:textColor="#000000" />
+
+<!--                <EditText-->
+<!--                    android:inputType="phone"-->
+<!--                    android:id="@+id/barcode_edit_value2"-->
+<!--                    android:layout_width="270dp"-->
+<!--                    android:layout_height="43dp"-->
+<!--                    android:layout_marginBottom="5dp"-->
+<!--                    android:background="@drawable/edit_text_style"-->
+<!--                    android:hint="Enter Phone"-->
+<!--                    android:padding="10dp"-->
+<!--                    android:textColor="#000000" />-->
+
+<!--                <EditText-->
+<!--                    android:inputType="textPostalAddress"-->
+<!--                    android:id="@+id/barcode_edit_value3"-->
+<!--                    android:layout_width="270dp"-->
+<!--                    android:layout_height="43dp"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:background="@drawable/edit_text_style"-->
+<!--                    android:hint="Enter Address"-->
+<!--                    android:padding="10dp"-->
+<!--                    android:textColor="#000000"/>-->
+
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:id="@+id/generate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:text="Generate"/>
+                    <Button
+                        android:id="@+id/save"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Save"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/QR_Image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:contentDescription="@string/app_name" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>

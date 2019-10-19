@@ -3,6 +3,7 @@ package net.innovexit.brindavan.activities;
 import android.Manifest;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
@@ -120,12 +121,12 @@ public class CameraActivity extends AppCompatActivity {
                     case FirebaseVisionBarcode.TYPE_TEXT: {
                         createDialog(item.getRawValue());
                     }
-                    case FirebaseVisionBarcode.TYPE_URL: {
-                        // start browser intent
-                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(item.getRawValue()));
-                        startActivity(intent);
-                    }
-                    break;
+//                    case FirebaseVisionBarcode.TYPE_URL: {
+//                        // start browser intent
+//                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(item.getRawValue()));
+//                        startActivity(intent);
+//                    }
+//                    break;
                     case FirebaseVisionBarcode.TYPE_CONTACT_INFO: {
                         String information = new StringBuilder("Name :")
                                 .append(item.getContactInfo().getName().getFormattedName())
@@ -147,7 +148,9 @@ public class CameraActivity extends AppCompatActivity {
     }
 
     private void createDialog(String text) {
-        androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(this,R.style.AlertDialogStyle);
+       AlertDialog.Builder builder = new AlertDialog.Builder(this,R.style.AlertDialogStyle);
+        builder.setTitle("Scan Result");
+        builder.setNegativeButton("Cancel",null);
         builder.setMessage(text)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
@@ -155,7 +158,7 @@ public class CameraActivity extends AppCompatActivity {
                         dialog.dismiss();
                     }
                 });
-        androidx.appcompat.app.AlertDialog dialog = builder.create();
+        AlertDialog dialog = builder.create();
         dialog.show();
         Toast.makeText(this, text, Toast.LENGTH_LONG).show();
     }
