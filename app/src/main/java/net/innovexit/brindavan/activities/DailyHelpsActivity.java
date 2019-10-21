@@ -19,11 +19,6 @@ import net.innovexit.brindavan.R;
 
 public class DailyHelpsActivity extends AppCompatActivity {
 
-    MaterialButton homeBtn, noticeBtn, vehicleBtn, familyBtn, residentBtn, communicateBtn
-            , dailyBtn, helpGuestBtn, hireBtn, serviceBtn, sosBtn, unannouncedBtn;
-
-    Intent intentNotice, intentVehicle, intentFamily, intentResident, intentHome
-            , intentCommunicate, intentGuestHelp, intentHire, intentService, intentSoS, intentUnannounced;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,47 +26,6 @@ public class DailyHelpsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_daily_helps);
 
         setUpToolbar();
-
-        VehicleLogsActivity navigate = new VehicleLogsActivity();
-
-        homeBtn = findViewById(R.id.home);
-        noticeBtn = findViewById(R.id.notice);
-        vehicleBtn = findViewById(R.id.vehicle);
-        familyBtn = findViewById(R.id.family);
-        residentBtn = findViewById(R.id.resident);
-        communicateBtn = findViewById(R.id.communicate);
-        dailyBtn = findViewById(R.id.helps);
-        helpGuestBtn = findViewById(R.id.help_guest);
-        hireBtn = findViewById(R.id.hire);
-        serviceBtn = findViewById(R.id.service);
-        sosBtn = findViewById(R.id.sos);
-        unannouncedBtn = findViewById(R.id.unannounced);
-
-        intentNotice = new Intent(this, NoticeBoardActivity.class);
-        intentVehicle = new Intent(this, VehicleLogsActivity.class);
-        intentFamily = new Intent(this, FamilyMembersActivity.class);
-        intentResident = new Intent(this, ResidentDirActivity.class);
-        intentHome = new Intent(this, HomeActivity.class);
-        intentCommunicate = new Intent(this, CommunicateGateActivity.class);
-        intentGuestHelp = new Intent(this, HelpGuestActivity.class);
-        intentHire = new Intent(this, HireHelpsActivity.class);
-        intentService = new Intent(this, ServiceActivity.class);
-        intentSoS = new Intent(this, SoSActivity.class);
-        intentUnannounced = new Intent(this, UnannouncedActivity.class);
-
-        navigate.navigateTo(this, dailyBtn, getIntent(), true);
-        navigate.navigateTo(this,noticeBtn, intentNotice, false);
-        navigate.navigateTo(this, vehicleBtn, intentVehicle, false);
-        navigate.navigateTo(this, familyBtn, intentFamily, false);
-        navigate.navigateTo(this, residentBtn, intentResident, false);
-        navigate.navigateTo(this,homeBtn, intentHome, false);
-        navigate.navigateTo(this, communicateBtn, intentCommunicate, false);
-        navigate.navigateTo(this,helpGuestBtn, intentGuestHelp, false);
-        navigate.navigateTo(this, hireBtn, intentHire, false);
-        navigate.navigateTo(this, serviceBtn, intentService, false);
-        navigate.navigateTo(this, sosBtn, intentSoS, false);
-        navigate.navigateTo(this,unannouncedBtn, intentUnannounced, false);
-
 
 
 
