@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#1D1D1F</color>
     <color name="colorAccent">#1D1D1F</color>
     <color name="textColorPrimary">#ffffff</color>
+    <color name="textColorSecondary">#DDD8D8</color>
     <color name="toolbarIconColor">@color/textColorPrimary</color>
     <color name="loginPageBackgroundColor">#FFFFFF</color>
     <color name="productGridBackgroundColor">#2F3436</color>

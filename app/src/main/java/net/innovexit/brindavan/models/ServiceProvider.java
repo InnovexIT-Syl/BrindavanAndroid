@@ -1,4 +1,4 @@
-package net.innovexit.brindavan.Models;
+package net.innovexit.brindavan.models;
 
 import java.io.Serializable;
 

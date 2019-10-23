@@ -9,21 +9,33 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.button.MaterialButton;
 
 import net.innovexit.brindavan.ApiDialog;
 import net.innovexit.brindavan.NavigationIconClickListener;
 import net.innovexit.brindavan.R;
+import net.innovexit.brindavan.adapters.RequestItemAdapter;
+import net.innovexit.brindavan.models.RequestDetailsModel;
+import net.innovexit.brindavan.models.RequestListModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ServiceActivity extends AppCompatActivity {
 
-    MaterialButton homeBtn, noticeBtn, vehicleBtn, familyBtn, residentBtn, communicateBtn
-            , dailyBtn, helpGuestBtn, hireBtn, serviceBtn, sosBtn, unannouncedBtn;
+//    MaterialButton homeBtn, noticeBtn, vehicleBtn, familyBtn, residentBtn, communicateBtn
+//            , dailyBtn, helpGuestBtn, hireBtn, serviceBtn, sosBtn, unannouncedBtn;
+//
+//    Intent intentNotice, intentVehicle, intentFamily, intentResident, intentHome
+//            , intentDaily, intentGuestHelp, intentHire, intentCommunicate, intentSoS, intentUnannounced;
 
-    Intent intentNotice, intentVehicle, intentFamily, intentResident, intentHome
-            , intentDaily, intentGuestHelp, intentHire, intentCommunicate, intentSoS, intentUnannounced;
+    private RecyclerView recyclerView;
+    private RequestItemAdapter requestItemAdapter;
+    private List<RequestListModel> items;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,45 +44,56 @@ public class ServiceActivity extends AppCompatActivity {
 
         setUpToolbar();
 
-        VehicleLogsActivity navigate = new VehicleLogsActivity();
+        getItemList();
 
-        homeBtn = findViewById(R.id.home);
-        noticeBtn = findViewById(R.id.notice);
-        vehicleBtn = findViewById(R.id.vehicle);
-        familyBtn = findViewById(R.id.family);
-        residentBtn = findViewById(R.id.resident);
-        communicateBtn = findViewById(R.id.communicate);
-        dailyBtn = findViewById(R.id.helps);
-        helpGuestBtn = findViewById(R.id.help_guest);
-        hireBtn = findViewById(R.id.hire);
-        serviceBtn = findViewById(R.id.service);
-        sosBtn = findViewById(R.id.sos);
-        unannouncedBtn = findViewById(R.id.unannounced);
+        recyclerView = findViewById(R.id.requestList);
 
-        intentNotice = new Intent(this, NoticeBoardActivity.class);
-        intentVehicle = new Intent(this, VehicleLogsActivity.class);
-        intentFamily = new Intent(this, FamilyMembersActivity.class);
-        intentResident = new Intent(this, ResidentDirActivity.class);
-        intentHome = new Intent(this, HomeActivity.class);
-        intentDaily = new Intent(this, DailyHelpsActivity.class);
-        intentGuestHelp = new Intent(this, HelpGuestActivity.class);
-        intentHire = new Intent(this, HireHelpsActivity.class);
-        intentCommunicate = new Intent(this, CommunicateGateActivity.class);
-        intentSoS = new Intent(this, SoSActivity.class);
-        intentUnannounced = new Intent(this, UnannouncedActivity.class);
+        requestItemAdapter = new RequestItemAdapter(items);
 
-        navigate.navigateTo(this, serviceBtn, getIntent(), true);
-        navigate.navigateTo(this,noticeBtn, intentNotice, false);
-        navigate.navigateTo(this, vehicleBtn, intentVehicle, false);
-        navigate.navigateTo(this, familyBtn, intentFamily, false);
-        navigate.navigateTo(this, residentBtn, intentResident, false);
-        navigate.navigateTo(this,homeBtn, intentHome, false);
-        navigate.navigateTo(this, dailyBtn, intentDaily, false);
-        navigate.navigateTo(this,helpGuestBtn, intentGuestHelp, false);
-        navigate.navigateTo(this, hireBtn, intentHire, false);
-        navigate.navigateTo(this, communicateBtn, intentCommunicate, false);
-        navigate.navigateTo(this, sosBtn, intentSoS, false);
-        navigate.navigateTo(this,unannouncedBtn, intentUnannounced, false);
+        recyclerView.setLayoutManager(new LinearLayoutManager(ServiceActivity.this));
+
+        recyclerView.setAdapter(requestItemAdapter);
+
+
+//        VehicleLogsActivity navigate = new VehicleLogsActivity();
+//
+//        homeBtn = findViewById(R.id.home);
+//        noticeBtn = findViewById(R.id.notice);
+//        vehicleBtn = findViewById(R.id.vehicle);
+//        familyBtn = findViewById(R.id.family);
+//        residentBtn = findViewById(R.id.resident);
+//        communicateBtn = findViewById(R.id.communicate);
+//        dailyBtn = findViewById(R.id.helps);
+//        helpGuestBtn = findViewById(R.id.help_guest);
+//        hireBtn = findViewById(R.id.hire);
+//        serviceBtn = findViewById(R.id.service);
+//        sosBtn = findViewById(R.id.sos);
+//        unannouncedBtn = findViewById(R.id.unannounced);
+//
+//        intentNotice = new Intent(this, NoticeBoardActivity.class);
+//        intentVehicle = new Intent(this, VehicleLogsActivity.class);
+//        intentFamily = new Intent(this, FamilyMembersActivity.class);
+//        intentResident = new Intent(this, ResidentDirActivity.class);
+//        intentHome = new Intent(this, HomeActivity.class);
+//        intentDaily = new Intent(this, DailyHelpsActivity.class);
+//        intentGuestHelp = new Intent(this, HelpGuestActivity.class);
+//        intentHire = new Intent(this, HireHelpsActivity.class);
+//        intentCommunicate = new Intent(this, CommunicateGateActivity.class);
+//        intentSoS = new Intent(this, SoSActivity.class);
+//        intentUnannounced = new Intent(this, UnannouncedActivity.class);
+//
+//        navigate.navigateTo(this, serviceBtn, getIntent(), true);
+//        navigate.navigateTo(this,noticeBtn, intentNotice, false);
+//        navigate.navigateTo(this, vehicleBtn, intentVehicle, false);
+//        navigate.navigateTo(this, familyBtn, intentFamily, false);
+//        navigate.navigateTo(this, residentBtn, intentResident, false);
+//        navigate.navigateTo(this,homeBtn, intentHome, false);
+//        navigate.navigateTo(this, dailyBtn, intentDaily, false);
+//        navigate.navigateTo(this,helpGuestBtn, intentGuestHelp, false);
+//        navigate.navigateTo(this, hireBtn, intentHire, false);
+//        navigate.navigateTo(this, communicateBtn, intentCommunicate, false);
+//        navigate.navigateTo(this, sosBtn, intentSoS, false);
+//        navigate.navigateTo(this,unannouncedBtn, intentUnannounced, false);
 
 
 
@@ -85,6 +108,22 @@ public class ServiceActivity extends AppCompatActivity {
         }
 
 
+
+    }
+
+    private void getItemList() {
+
+        items = new ArrayList<>();
+
+        for(int i = 0; i<10; i++){
+            List<RequestDetailsModel> requestDetailsModelList = new ArrayList<>(3);
+
+            requestDetailsModelList.add(new RequestDetailsModel("Adil Varma","Doctor","+9028474","HealthLtd"));
+            requestDetailsModelList.add(new RequestDetailsModel("Aminul Islam","Electrician","+345654","Sigma Electronis"));
+            requestDetailsModelList.add(new RequestDetailsModel("M Rahat","Engineer","+4565764","Self Employed"));
+
+            items.add(new RequestListModel("Doctor_0"+i,requestDetailsModelList));
+        }
 
     }
 

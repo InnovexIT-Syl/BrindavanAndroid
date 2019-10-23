@@ -1,40 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     tools:context="net.innovexit.brindavan.activities.ServiceActivity">
-
-    <ScrollView
-        android:id="@+id/serviceMenu"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/toolbar"
-        android:visibility="gone">
-
-        <LinearLayout
-            android:id="@+id/nav_menu"
-            style="@style/Widget.Shrine.Backdrop"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="start"
-            android:orientation="vertical"
-            android:paddingLeft="20dp"
-            android:paddingTop="40dp"
-            android:paddingBottom="130dp">
-
-            <include layout="@layout/shr_backdrop" />
-        </LinearLayout>
-    </ScrollView>
-
-
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:elevation="0dp">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/service_app_bar"
@@ -45,553 +17,64 @@
             android:paddingLeft="12dp"
             android:paddingEnd="12dp"
             android:paddingRight="12dp"
-            app:contentInsetStart="0dp"
-            app:navigationIcon="@drawable/backspace"
             app:title="Service Requests" />
-    </com.google.android.material.appbar.AppBarLayout>
-    <ScrollView
+    <RelativeLayout
+        android:id="@+id/serviceContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/toolbar">
-        <RelativeLayout
-            android:id="@+id/serviceContainer"
+        android:layout_below="@id/service_app_bar">
+        <TextView
+            android:id="@+id/communicateGateTitle"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="sans-serif"
+            android:text="Current Service Requests"
+            android:textAllCaps="true"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/communicateGateTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="30dp"
-                android:fontFamily="sans-serif"
-                android:text="Current Service Requests"
-                android:textAllCaps="true"
-                android:textColor="@color/textColorPrimary"
-                android:textSize="25sp"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/communicateSubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/communicateGateTitle"
+            android:layout_marginLeft="20dp"
+            android:text="Current Service Requests on Complex"
+            android:textColor="@color/textColorPrimary" />
 
-            <TextView
-                android:id="@+id/communicateSubTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/communicateGateTitle"
-                android:layout_marginLeft="20dp"
-                android:text="Current Service Requests on Complex"
-                android:textColor="@color/textColorPrimary" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/communicateGateTitle"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/communicateSubTitle"
+            android:text="@string/shr_app_name"
+            android:textColor="#2196F3" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/communicateGateTitle"
-                android:layout_marginLeft="5dp"
-                android:layout_toEndOf="@+id/communicateSubTitle"
-                android:text="@string/shr_app_name"
-                android:textColor="#2196F3" />
 
-            <TextView
-                android:id="@+id/communicateGateTitleHeader"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/communicateSubTitle"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="30dp"
-                android:fontFamily="sans-serif"
-                android:text="Current Service Request "
-                android:textAlignment="center"
-                android:textColor="#00BCD4"
-                android:textSize="30sp"
-                android:textStyle="bold" />
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/communicateSubTitle"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="20sp"
+            android:background="@drawable/edit_text_style"
+            android:drawableEnd="@drawable/filter_list"
+            android:drawableStart="@drawable/search"
+            android:padding="5dp"
+            android:textColor="#1A1818">
+        </EditText>
 
-            <TextView
-                android:id="@+id/apartmentName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/communicateGateTitleHeader"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/background_style"
-                android:fontFamily="sans-serif"
-                android:padding="10dp"
-                android:text="Service Request "
-                android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/editText"
-                android:layout_width="340dp"
-                android:layout_height="40dp"
-                android:layout_below="@id/apartmentName"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
-               android:background="@drawable/edit_text_style"
-                android:drawableLeft="@drawable/search"
-                android:drawableRight="@drawable/filter_list"
-                android:padding="5dp"
-                android:textColor="#1A1818">
-            </EditText>
-
-            <TableLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/editText"
-                android:layout_margin="7dp"
-                android:shrinkColumns="*"
-                android:stretchColumns="*">
-                <TableRow
-                    android:id="@+id/tableRow1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/table_row_style">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="Id"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        android:textStyle="bold"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="Name"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        android:textStyle="bold"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="Phone Number"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="Date"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        android:textStyle="bold"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="Unit"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        android:textStyle="bold"/>
-                </TableRow>
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#3C4147">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="1"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="Mobin"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="01515689"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="2-2-2019"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="unit-20"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-                </TableRow>
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#302C2C">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="2"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="Delwar"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="01515689"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="1-2-2019"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="unit-50"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-                </TableRow>
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#3C4147">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="3"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="Mobin"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="01515689"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="1-12-2019"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="unit-22"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-                </TableRow>
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#302C2C">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="4"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="Masum"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="01535689"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="2-2-2016"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="unit-10"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-                </TableRow>
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#3C4147">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="5"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="Hasan"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="01535689"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="2-2-2016"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="unit-10"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-                </TableRow>
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#302C2C">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="6"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="Golap"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="01535689"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="2-2-2016"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="unit-10"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-                </TableRow>
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#3C4147">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="7"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="Jahid"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="01535689"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="2-2-2016"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="unit-10"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-                </TableRow>
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#302C2C">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="8"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="Parvej"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="01535689"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="2-2-2016"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="unit-10"
-                        android:textColor="#FFF"
-                        android:textSize="20dp"
-                        ></TextView>
-                </TableRow>
-            </TableLayout>
-
-        </RelativeLayout>
-    </ScrollView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/requestList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/editText"/>
+    </RelativeLayout>
 
 </RelativeLayout>

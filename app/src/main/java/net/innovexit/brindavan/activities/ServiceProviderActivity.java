@@ -17,7 +17,7 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import net.innovexit.brindavan.Models.ServiceProvider;
+import net.innovexit.brindavan.models.ServiceProvider;
 import net.innovexit.brindavan.R;
 
 public class ServiceProviderActivity extends AppCompatActivity {
