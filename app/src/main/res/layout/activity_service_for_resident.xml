@@ -4,20 +4,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context="net.innovexit.brindavan.activities.ServiceActivity">
+    tools:context="net.innovexit.brindavan.activities.ServiceActivityForResident">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/service_app_bar"
-            style="@style/Widget.Shrine.Toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:paddingStart="12dp"
-            android:paddingLeft="12dp"
-            android:paddingEnd="12dp"
-            android:paddingRight="12dp"
-            app:title="Service Requests" />
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/service_app_bar"
+        style="@style/Widget.Shrine.Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:paddingStart="12dp"
+        android:paddingLeft="12dp"
+        android:paddingEnd="12dp"
+        android:paddingRight="12dp"
+        app:title="Service Requests" />
     <RelativeLayout
         android:id="@+id/serviceContainer"
         android:layout_width="match_parent"
@@ -30,7 +30,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="30dp"
             android:fontFamily="sans-serif"
-            android:text="Current Service Requests"
+            android:text="My Service Requests"
             android:textAllCaps="true"
             android:textColor="@color/textColorPrimary"
             android:textSize="25sp"
@@ -54,12 +54,27 @@
             android:text="@string/shr_app_name"
             android:textColor="#2196F3" />
 
+        <TextView
+            android:id="@+id/addNewRequst"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/communicateSubTitle"
+            android:layout_centerInParent="true"
+            android:drawableStart="@drawable/add_circle"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            android:background="@drawable/background_style"
+            android:fontFamily="sans-serif"
+            android:padding="10dp"
+            android:text="Add Request"
+            android:textStyle="bold" />
+
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/searchBox"
             android:layout_width="300dp"
             android:layout_height="40dp"
-            android:layout_below="@id/communicateSubTitle"
+            android:layout_below="@id/addNewRequst"
             android:layout_alignParentEnd="true"
             android:layout_margin="20sp"
             android:background="@drawable/edit_text_style"
@@ -71,11 +86,11 @@
 
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/requestList"
+            android:id="@+id/requestListByResident"
             android:background="@color/listBackground"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/editText"/>
+            android:layout_height="match_parent"
+            android:layout_below="@id/searchBox"/>
     </RelativeLayout>
 
 </RelativeLayout>

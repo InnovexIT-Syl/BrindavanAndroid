@@ -1,5 +1,6 @@
 package net.innovexit.brindavan;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ApiDialog {
+    @SuppressLint("SetTextI18n")
     public void showDialog(final Context context) {
 
         //Just Checking the clone push

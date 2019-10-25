@@ -4,10 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_marginTop="2dp"
+    android:background="@color/listItemBackground"
+    android:layout_marginStart="3dp"
+    android:layout_marginEnd="3dp"
+    android:layout_marginTop="3dp"
     android:padding="10dp">
 
             <LinearLayout
+                android:id="@+id/headerLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -29,47 +33,71 @@
                     android:padding="5dp"/>
             </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:id="@+id/expandLayout">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/serviceProviderPhoto"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:tint="@color/textColorSecondary"
-                app:srcCompat="@drawable/people"/>
-            <TextView
-                android:id="@+id/serviceProviderName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/textColorSecondary"
-                android:text="Service Person"
-                android:padding="5dp"/>
+                app:srcCompat="@drawable/people"
+                android:contentDescription="TODO" />
 
             <TextView
-                android:id="@+id/serviceProviderJob"
-                android:layout_width="match_parent"
+                android:id="@+id/dateOfOredr"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/textColorSecondary"
-                android:text="Job"
+                android:layout_alignParentEnd="true"
+                android:textColor="#FFC71C"
+                android:text="Date"
+
                 android:padding="5dp"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/serviceProviderName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/textColorSecondary"
+            android:text="Service Person"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/serviceProviderJob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColorSecondary"
+            android:text="Job"
+            android:padding="5dp"/>
 
 
-            <TextView
-                android:id="@+id/serviceProviderNumber"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/textColorSecondary"
-                android:text="Contatct Number"
-                android:padding="5dp"/>
+        <TextView
+            android:id="@+id/serviceProviderNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColorSecondary"
+            android:text="Contatct Number"
+            android:padding="5dp"/>
 
 
 
-            <TextView
-                android:id="@+id/serviceProviderLtd"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/textColorSecondary"
-                android:text="Provider Company"
-                android:padding="5dp"/>
+        <TextView
+            android:id="@+id/serviceProviderLtd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColorSecondary"
+            android:text="Provider Company"
+            android:padding="5dp"/>
+    </LinearLayout>
+
 
 </LinearLayout>

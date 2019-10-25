@@ -1,10 +1,10 @@
 package net.innovexit.brindavan.models;
 
-public class RequestDetailsModel {
+public class MyRequestModel {
 
-    String servicePersonName, personJob, phoneNumber, serviceCompany;
+    private String servicePersonName, personJob, phoneNumber, serviceCompany;
 
-    public RequestDetailsModel(String servicePersonName, String personJob, String phoneNumber, String serviceCompany) {
+    public MyRequestModel(String servicePersonName, String personJob, String phoneNumber, String serviceCompany) {
         this.servicePersonName = servicePersonName;
         this.personJob = personJob;
         this.phoneNumber = phoneNumber;

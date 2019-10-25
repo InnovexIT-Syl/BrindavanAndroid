@@ -96,7 +96,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:text="@string/service_requests"
+        android:text="Service Request(ManagerSide)"
+        android:textAlignment="textStart"
+        app:icon="@drawable/service"
+        app:iconTint="@color/textColorPrimary" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/serviceForRsident"
+        style="@style/Widget.Shrine.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="Service Request(ResidentSide)"
         android:textAlignment="textStart"
         app:icon="@drawable/service"
         app:iconTint="@color/textColorPrimary" />

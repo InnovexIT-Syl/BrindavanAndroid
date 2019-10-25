@@ -18,10 +18,10 @@ import net.innovexit.brindavan.R;
 
 public class HomeActivity extends AppCompatActivity {
 
-    MaterialButton homeBtn, noticeBtn, vehicleBtn, familyBtn, residentBtn, communicateBtn
+    MaterialButton homeBtn, noticeBtn, vehicleBtn, familyBtn, residentBtn, communicateBtn, serviceForResident
             , dailyBtn, helpGuestBtn, hireBtn, serviceBtn, sosBtn, unannouncedBtn,adminBtn,serviceProvider,securityManager;
 
-    Intent intentNotice, intentVehicle, intentFamily, intentResident, intentCommunicate
+    Intent intentNotice, intentVehicle, intentFamily, intentResident, intentCommunicate, intentServiceForResident
             , intentDaily, intentGuestHelp, intentHire, intentService, intentSoS, intentUnannounced,intentAdmin,intentServiceProvider,intentSecurityManager;
 
     @Override
@@ -43,6 +43,7 @@ public class HomeActivity extends AppCompatActivity {
         helpGuestBtn = findViewById(R.id.help_guest);
         hireBtn = findViewById(R.id.hire);
         serviceBtn = findViewById(R.id.service);
+        serviceForResident = findViewById(R.id.serviceForRsident);
         sosBtn = findViewById(R.id.sos);
         unannouncedBtn = findViewById(R.id.unannounced);
         adminBtn = findViewById(R.id.admin);
@@ -58,6 +59,7 @@ public class HomeActivity extends AppCompatActivity {
         intentGuestHelp = new Intent(this, HelpGuestActivity.class);
         intentHire = new Intent(this, HireHelpsActivity.class);
         intentService = new Intent(this, ServiceActivity.class);
+        intentServiceForResident = new Intent(this,ServiceActivityForResident.class);
         intentSoS = new Intent(this, SoSActivity.class);
         intentUnannounced = new Intent(this, UnannouncedActivity.class);
         intentAdmin = new Intent(this, AppAdminActivity.class);
@@ -74,6 +76,7 @@ public class HomeActivity extends AppCompatActivity {
         navigate.navigateTo(this,helpGuestBtn, intentGuestHelp, false);
         navigate.navigateTo(this, hireBtn, intentHire, false);
         navigate.navigateTo(this, serviceBtn, intentService, false);
+        navigate.navigateTo(this, serviceForResident, intentServiceForResident, false);
         navigate.navigateTo(this, sosBtn, intentSoS, false);
         navigate.navigateTo(this,unannouncedBtn, intentUnannounced, false);
         navigate.navigateTo(this,adminBtn, intentAdmin, false);

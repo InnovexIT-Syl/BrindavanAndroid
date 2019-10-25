@@ -3,14 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="net.innovexit.brindavan">
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-feature android:name="android.hardware.camera.autofocus" />
-
-
     <application
         android:name=".application.BrindavanApplication"
         android:allowBackup="true"
@@ -20,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Shrine"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".activities.ChatActivity"></activity>
+        <activity android:name=".activities.ServiceActivityForResident"></activity>
+        <activity android:name=".activities.ChatActivity" />
         <activity android:name=".activities.CameraActivity" />
         <activity android:name=".activities.SecurityManagerActivity" />
         <activity android:name=".activities.AppAdminActivity" />
@@ -39,15 +32,24 @@
         <activity android:name=".activities.HomeActivity" />
         <activity android:name=".activities.LoginActivity" />
         <activity android:name=".activities.WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
             <meta-data
                 android:name="com.google.firebase.ml.vision.DEPENDENCIES"
                 android:value="barcode" />
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
