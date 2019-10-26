@@ -74,15 +74,51 @@
             android:id="@+id/searchBox"
             android:layout_width="300dp"
             android:layout_height="40dp"
+            android:hint="Search"
             android:layout_below="@id/addNewRequst"
-            android:layout_alignParentEnd="true"
-            android:layout_margin="20sp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10sp"
             android:background="@drawable/edit_text_style"
-            android:drawableEnd="@drawable/filter_list"
             android:drawableStart="@drawable/search"
             android:padding="5dp"
             android:textColor="#1A1818">
         </EditText>
+
+        <RelativeLayout
+            android:id="@+id/titleOfList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_below="@+id/searchBox"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="24dp"
+                android:textColor="@color/textColorSecondary"
+                android:textStyle="bold"
+                android:text="Service"
+                android:padding="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/textColorSecondary"
+                android:textStyle="bold"
+                android:text="Request Date"
+                android:padding="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/textColorSecondary"
+                android:textStyle="bold"
+                android:text="Request For"
+                android:padding="5dp"/>
+        </RelativeLayout>
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -90,7 +126,7 @@
             android:background="@color/listBackground"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/searchBox"/>
+            android:layout_below="@id/titleOfList"/>
     </RelativeLayout>
 
 </RelativeLayout>

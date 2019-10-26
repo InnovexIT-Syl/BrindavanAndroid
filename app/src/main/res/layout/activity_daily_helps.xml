@@ -119,7 +119,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/dailySearch"
                 android:layout_width="350dp"
                 android:layout_height="40dp"
                 android:layout_below="@+id/allHelpsName"
@@ -135,7 +135,7 @@
                 android:id="@+id/linear"
                 android:layout_width="match_parent"
                 android:layout_height="155dp"
-                android:layout_below="@id/editText"
+                android:layout_below="@id/dailySearch"
                 android:layout_margin="5dp"
                 android:background="#F7C2B0">
 

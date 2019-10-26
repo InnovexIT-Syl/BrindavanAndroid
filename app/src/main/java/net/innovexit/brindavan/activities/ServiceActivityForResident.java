@@ -8,7 +8,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import net.innovexit.brindavan.ApiDialog;
@@ -28,6 +31,7 @@ public class ServiceActivityForResident extends AppCompatActivity {
 
 
     List<MyRequestModel> requestList;
+    private EditText inputSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,20 +69,50 @@ public class ServiceActivityForResident extends AppCompatActivity {
             apiDialog.showDialog(this);
         }
 
+        inputSearch = findViewById(R.id.searchBox);
+
+        inputSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
+
+                myRequestsAdapter.getFilter().filter(charSequence);
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
     }
 
     private void getRequestList() {
         requestList = new ArrayList<>();
 
-        requestList.add(new MyRequestModel("Adil Varma","Doctor","+9028474","HealthLtd"));
-        requestList.add(new MyRequestModel("Aminul Islam","Electrician","+345654","Sigma Electronis"));
-        requestList.add(new MyRequestModel("M Rahat","Engineer","+4565764","Self Employed"));
-        requestList.add(new MyRequestModel("Adil Varma","Doctor","+9028474","HealthLtd"));
-        requestList.add(new MyRequestModel("Aminul Islam","Electrician","+345654","Sigma Electronis"));
-        requestList.add(new MyRequestModel("M Rahat","Engineer","+4565764","Self Employed"));
-        requestList.add(new MyRequestModel("Adil Varma","Doctor","+9028474","HealthLtd"));
-        requestList.add(new MyRequestModel("Aminul Islam","Electrician","+345654","Sigma Electronis"));
-        requestList.add(new MyRequestModel("M Rahat","Engineer","+4565764","Self Employed"));
+        requestList.add(new MyRequestModel("Adil Varma","Doctor","+9028474","HealthLtd","12-09-2019","Me" ));
+        requestList.add(new MyRequestModel("Aminul Islam","Electrician","+345654","Sigma Electronis","12-09-2019","Me" ));
+        requestList.add(new MyRequestModel("M Rahat","Maid","+4565764","Self Employed","12-09-2019","Me" ));
+        requestList.add(new MyRequestModel("Adil Varma","Doctor","+9028474","HealthLtd","12-09-2019","Me" ));
+        requestList.add(new MyRequestModel("Aminul Islam","Electrician","+345654","Sigma Electronis","12-09-2019","Me" ));
+        requestList.add(new MyRequestModel("M Rahat","Maid","+4565764","Self Employed","12-09-2019","Me" ));
+        requestList.add(new MyRequestModel("Adil Varma","Doctor","+9028474","HealthLtd","12-09-2019","Me" ));
+        requestList.add(new MyRequestModel("Aminul Islam","Electrician","+345654","Sigma Electronis","12-09-2019","Me" ));
+        requestList.add(new MyRequestModel("M Rahat","Maid","+4565764","Self Employed","12-09-2019","Me" ));
+        requestList.add(new MyRequestModel("Adil Varma","Doctor","+9028474","HealthLtd","12-09-2019","Me" ));
+        requestList.add(new MyRequestModel("Aminul Islam","Electrician","+345654","Sigma Electronis","24-09-2018","Me" ));
+        requestList.add(new MyRequestModel("M Rahat","Maid","+4565764","Self Employed","10-12-2019","Me" ));
+        requestList.add(new MyRequestModel("Adil Varma","Doctor","+9028474","HealthLtd","01-10-2019","Me" ));
+        requestList.add(new MyRequestModel("Aminul Islam","Electrician","+345654","Sigma Electronis","02-08-2017","Me" ));
+        requestList.add(new MyRequestModel("M Rahat","Cook","+4565764","Self Employed","21-09-2019","Me" ));
+        requestList.add(new MyRequestModel("Adil Varma","Doctor","+9028474","HealthLtd","12-09-2019","Me" ));
+        requestList.add(new MyRequestModel("Aminul Islam","Electrician","+345654","Sigma Electronis","12-09-2019","Me" ));
+        requestList.add(new MyRequestModel("M Rahat","Maid","+4565764","Self Employed","12-09-2019","Me" ));
 
 
     }

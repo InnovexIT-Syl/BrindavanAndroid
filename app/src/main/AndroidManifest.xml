@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Shrine"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".activities.ServiceActivityForResident"></activity>
+        <activity android:name=".activities.ServiceActivityForResident"/>
         <activity android:name=".activities.ChatActivity" />
         <activity android:name=".activities.CameraActivity" />
         <activity android:name=".activities.SecurityManagerActivity" />
