@@ -24,7 +24,6 @@
             android:paddingLeft="20dp"
             android:paddingTop="40dp"
             android:paddingBottom="130dp">
-
             <include layout="@layout/shr_backdrop" />
         </LinearLayout>
     </ScrollView>
@@ -132,7 +131,7 @@
                 android:paddingTop="8dp">
 
                 <ImageButton
-                    android:id="@+id/image_1"
+                    android:id="@+id/maid"
                     android:layout_width="140dp"
                     android:layout_height="170dp"
                     android:background="@drawable/image_background"
@@ -143,7 +142,7 @@
                 <TextView
                     android:layout_width="140dp"
                     android:layout_height="30dp"
-                    android:layout_alignBottom="@+id/image_1"
+                    android:layout_alignBottom="@+id/maid"
                     android:background="@drawable/text_background"
                     android:text="Maid"
                     android:textAlignment="center"
@@ -154,11 +153,11 @@
                 </TextView>
 
                 <ImageButton
-                    android:id="@+id/image_2"
+                    android:id="@+id/guest"
                     android:layout_width="140dp"
                     android:layout_height="170dp"
                     android:layout_marginLeft="15dp"
-                    android:layout_toEndOf="@+id/image_1"
+                    android:layout_toEndOf="@+id/maid"
                     android:background="@drawable/image_background"
                     android:padding="25dp"
                     android:src="@drawable/guest" />
@@ -166,8 +165,8 @@
                 <TextView
                     android:layout_width="140dp"
                     android:layout_height="30dp"
-                    android:layout_alignStart="@+id/image_1"
-                    android:layout_alignBottom="@+id/image_2"
+                    android:layout_alignStart="@+id/maid"
+                    android:layout_alignBottom="@+id/guest"
                     android:layout_marginStart="155dp"
                     android:background="@drawable/text_background"
                     android:text="Guest"
@@ -178,10 +177,10 @@
 
 
                 <ImageButton
-                    android:id="@+id/image_3"
+                    android:id="@+id/police_officer"
                     android:layout_width="140dp"
                     android:layout_height="170dp"
-                    android:layout_below="@id/image_1"
+                    android:layout_below="@id/maid"
                     android:layout_marginTop="13dp"
                     android:background="@drawable/image_background"
                     android:padding="25dp"
@@ -191,7 +190,7 @@
                 <TextView
                     android:layout_width="140dp"
                     android:layout_height="30dp"
-                    android:layout_alignBottom="@+id/image_3"
+                    android:layout_alignBottom="@+id/police_officer"
                     android:background="@drawable/text_background"
                     android:text="Police Officer"
                     android:textAlignment="center"
@@ -201,13 +200,13 @@
                 </TextView>
 
                 <ImageButton
-                    android:id="@+id/image_4"
+                    android:id="@+id/driver"
                     android:layout_width="140dp"
                     android:layout_height="170dp"
-                    android:layout_below="@id/image_1"
+                    android:layout_below="@id/maid"
                     android:layout_marginStart="14dp"
                     android:layout_marginTop="13dp"
-                    android:layout_toEndOf="@id/image_3"
+                    android:layout_toEndOf="@id/police_officer"
                     android:background="@drawable/image_background"
                     android:padding="25dp"
                     android:src="@drawable/driver">
@@ -216,8 +215,8 @@
                 <TextView
                     android:layout_width="140dp"
                     android:layout_height="30dp"
-                    android:layout_alignStart="@+id/image_1"
-                    android:layout_alignBottom="@+id/image_4"
+                    android:layout_alignStart="@+id/maid"
+                    android:layout_alignBottom="@+id/driver"
                     android:layout_marginStart="154dp"
                     android:background="@drawable/text_background"
                     android:text="Driver"
@@ -228,10 +227,10 @@
                 </TextView>
 
                 <ImageButton
-                    android:id="@+id/image_5"
+                    android:id="@+id/admin"
                     android:layout_width="140dp"
                     android:layout_height="170dp"
-                    android:layout_below="@id/image_3"
+                    android:layout_below="@id/police_officer"
                     android:layout_marginTop="13dp"
                     android:background="@drawable/image_background"
                     android:padding="25dp"
@@ -241,7 +240,7 @@
                 <TextView
                     android:layout_width="140dp"
                     android:layout_height="30dp"
-                    android:layout_alignBottom="@+id/image_5"
+                    android:layout_alignBottom="@+id/admin"
                     android:background="@drawable/text_background"
                     android:text="Admin Panel"
                     android:textAlignment="center"
@@ -254,10 +253,10 @@
                     android:id="@+id/image_6"
                     android:layout_width="140dp"
                     android:layout_height="170dp"
-                    android:layout_below="@id/image_4"
+                    android:layout_below="@id/driver"
                     android:layout_marginStart="14dp"
                     android:layout_marginTop="13dp"
-                    android:layout_toEndOf="@id/image_5"
+                    android:layout_toEndOf="@id/admin"
                     android:background="@drawable/image_background"
                     android:padding="25dp"
                     android:src="@drawable/taxi">
@@ -266,7 +265,7 @@
                 <TextView
                     android:layout_width="140dp"
                     android:layout_height="30dp"
-                    android:layout_alignStart="@+id/image_5"
+                    android:layout_alignStart="@+id/admin"
                     android:layout_alignBottom="@+id/image_6"
                     android:layout_marginStart="154dp"
                     android:background="@drawable/text_background"

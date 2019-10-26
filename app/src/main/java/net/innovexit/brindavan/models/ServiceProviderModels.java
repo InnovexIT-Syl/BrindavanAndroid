@@ -2,15 +2,15 @@ package net.innovexit.brindavan.models;
 
 import java.io.Serializable;
 
-public class ServiceProvider implements Serializable {
+public class ServiceProviderModels implements Serializable {
 
     private String name, phoneNumber, address, workingExperience;
 
-    public ServiceProvider() {
+    public ServiceProviderModels() {
 
     }
 
-    public ServiceProvider(String name, String phoneNumber, String address, String workingExperience) {
+    public ServiceProviderModels(String name, String phoneNumber, String address, String workingExperience) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.address = address;

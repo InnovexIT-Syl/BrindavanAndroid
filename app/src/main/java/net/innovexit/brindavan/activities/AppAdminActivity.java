@@ -71,8 +71,8 @@ public class AppAdminActivity extends AppCompatActivity {
         // for generate Bar code
         generateQrCode = findViewById(R.id.generate);
         inputTextQR1 = findViewById(R.id.barcode_edit_value1);
-       // inputTextQR2 = findViewById(R.id.barcode_edit_value2);
-       // inputTextQR2 = findViewById(R.id.barcode_edit_value3);
+        inputTextQR2 = findViewById(R.id.barcode_edit_value2);
+        inputTextQR3 = findViewById(R.id.barcode_edit_value3);
         showQrImage = findViewById(R.id.QR_Image);
         saveQrCode = findViewById(R.id.save);
 
@@ -191,11 +191,11 @@ public class AppAdminActivity extends AppCompatActivity {
         });
 
  */
-
         generateQrCode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String inputValue = inputTextQR1.getText().toString().trim();
+                String inputValue = "Name : " + inputTextQR1.getText().toString().trim()
+                        + "\n" + "Email : " + inputTextQR2.getText().toString().trim() + "\n" + "Phone Number : " + inputTextQR3.getText().toString().trim();
                 if (inputValue.length() > 0) {
                     WindowManager manager = (WindowManager) getSystemService(WINDOW_SERVICE);
                     Display display = manager.getDefaultDisplay();
@@ -226,7 +226,7 @@ public class AppAdminActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 boolean save;
-                String result,name = "image";
+                String result, name = "image";
                 try {
                     save = QRGSaver.save(savePath, name, bitmap, QRGContents.ImageType.IMAGE_JPEG);
                     result = save ? "Image Saved" : "Image Not Saved";

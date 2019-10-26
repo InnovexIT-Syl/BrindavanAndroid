@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -121,24 +122,18 @@ public class CameraActivity extends AppCompatActivity {
                     case FirebaseVisionBarcode.TYPE_TEXT: {
                         createDialog(item.getRawValue());
                     }
-//                    case FirebaseVisionBarcode.TYPE_URL: {
-//                        // start browser intent
-//                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(item.getRawValue()));
-//                        startActivity(intent);
+//                    case FirebaseVisionBarcode.TYPE_CONTACT_INFO: {
+//                        String information = new StringBuilder("Name :")
+//                                .append(item.getContactInfo().getName().getFormattedName())
+//                                .append("\n")
+//                                .append("Address : ")
+//                                .append(item.getContactInfo().getAddresses().get(0).getAddressLines()[0])
+//                                .append("\n")
+//                                .append("Email : ")
+//                                .append(item.getContactInfo().getEmails().get(0).getAddress())
+//                                .toString();
+//                        createDialog(information);
 //                    }
-//                    break;
-                    case FirebaseVisionBarcode.TYPE_CONTACT_INFO: {
-                        String information = new StringBuilder("Name :")
-                                .append(item.getContactInfo().getName().getFormattedName())
-                                .append("\n")
-                                .append("Address : ")
-                                .append(item.getContactInfo().getAddresses().get(0).getAddressLines()[0])
-                                .append("\n")
-                                .append("Email : ")
-                                .append(item.getContactInfo().getEmails().get(0).getAddress())
-                                .toString();
-                        createDialog(information);
-                    }
                     break;
                     default:
                         break;
@@ -150,7 +145,6 @@ public class CameraActivity extends AppCompatActivity {
     private void createDialog(String text) {
        AlertDialog.Builder builder = new AlertDialog.Builder(this,R.style.AlertDialogStyle);
         builder.setTitle("Scan Result");
-        builder.setNegativeButton("Cancel",null);
         builder.setMessage(text)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override

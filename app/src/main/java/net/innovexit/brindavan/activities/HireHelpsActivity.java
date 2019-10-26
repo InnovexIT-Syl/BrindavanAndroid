@@ -6,6 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -19,12 +20,7 @@ import net.innovexit.brindavan.R;
 
 public class HireHelpsActivity extends AppCompatActivity {
 
-    MaterialButton homeBtn, noticeBtn, vehicleBtn, familyBtn, residentBtn, communicateBtn
-            , dailyBtn, helpGuestBtn, hireBtn, serviceBtn, sosBtn, unannouncedBtn;
-
-    Intent intentNotice, intentVehicle, intentFamily, intentResident, intentHome
-            , intentDaily, intentGuestHelp, intentCommunicate, intentService, intentSoS, intentUnannounced;
-
+    ImageButton maid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,57 +28,21 @@ public class HireHelpsActivity extends AppCompatActivity {
 
         setUpToolbar();
 
-        VehicleLogsActivity navigate = new VehicleLogsActivity();
-
-        homeBtn = findViewById(R.id.home);
-        noticeBtn = findViewById(R.id.notice);
-        vehicleBtn = findViewById(R.id.vehicle);
-        familyBtn = findViewById(R.id.family);
-        residentBtn = findViewById(R.id.resident);
-        communicateBtn = findViewById(R.id.communicate);
-        dailyBtn = findViewById(R.id.helps);
-        helpGuestBtn = findViewById(R.id.help_guest);
-        hireBtn = findViewById(R.id.hire);
-        serviceBtn = findViewById(R.id.service);
-        sosBtn = findViewById(R.id.sos);
-        unannouncedBtn = findViewById(R.id.unannounced);
-
-        intentNotice = new Intent(this, NoticeBoardActivity.class);
-        intentVehicle = new Intent(this, VehicleLogsActivity.class);
-        intentFamily = new Intent(this, FamilyMembersActivity.class);
-        intentResident = new Intent(this, ResidentDirActivity.class);
-        intentHome = new Intent(this, HomeActivity.class);
-        intentDaily = new Intent(this, DailyHelpsActivity.class);
-        intentGuestHelp = new Intent(this, HelpGuestActivity.class);
-        intentCommunicate = new Intent(this, CommunicateGateActivity.class);
-        intentService = new Intent(this, ServiceActivity.class);
-        intentSoS = new Intent(this, SoSActivity.class);
-        intentUnannounced = new Intent(this, UnannouncedActivity.class);
-
-        navigate.navigateTo(this, hireBtn, getIntent(), true);
-        navigate.navigateTo(this,noticeBtn, intentNotice, false);
-        navigate.navigateTo(this, vehicleBtn, intentVehicle, false);
-        navigate.navigateTo(this, familyBtn, intentFamily, false);
-        navigate.navigateTo(this, residentBtn, intentResident, false);
-        navigate.navigateTo(this,homeBtn, intentHome, false);
-        navigate.navigateTo(this, dailyBtn, intentDaily, false);
-        navigate.navigateTo(this,helpGuestBtn, intentGuestHelp, false);
-        navigate.navigateTo(this, communicateBtn, intentCommunicate, false);
-        navigate.navigateTo(this, serviceBtn, intentService, false);
-        navigate.navigateTo(this, sosBtn, intentSoS, false);
-        navigate.navigateTo(this,unannouncedBtn, intentUnannounced, false);
-
-
+        maid = findViewById(R.id.maid);
+        maid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),HireNewHelpActivity.class));
+            }
+        });
 
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             findViewById(R.id.hireContainer).setBackgroundResource(R.drawable.shr_product_grid_background_shape);
-        }
-        else {
+        } else {
             ApiDialog apiDialog = new ApiDialog();
             apiDialog.showDialog(this);
         }
-
 
 
     }
@@ -91,14 +51,6 @@ public class HireHelpsActivity extends AppCompatActivity {
     private void setUpToolbar() {
         Toolbar toolbar = findViewById(R.id.hire_app_bar);
         this.setSupportActionBar(toolbar);
-
-        //        toolbar.setNavigationOnClickListener(new NavigationIconClickListener(
-//                this,
-//                findViewById(R.id.communicateContainer),findViewById(R.id.commuMenu),
-//                new AccelerateDecelerateInterpolator(),
-//                this.getResources().getDrawable(R.drawable.menu), // Menu open icon
-//                this.getResources().getDrawable(R.drawable.shr_close_menu))); // Menu close icon
-
         toolbar.setNavigationIcon(R.drawable.backspace);
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -107,9 +59,5 @@ public class HireHelpsActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), HomeActivity.class));
             }
         });
-
-
     }
-
-
 }

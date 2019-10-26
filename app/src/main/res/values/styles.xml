@@ -6,13 +6,13 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:itemBackground">#5767DA</item>
         <item name="android:textColorPrimary">@color/textColorPrimary</item>
     </style>
-    <style name="AlertDialogStyle" parent="Theme.AppCompat.Light.Dialog">
-        <item name="android:textColor">#CFCD35</item>
-        <item name="android:textColorPrimary">#009688</item>
+    <style name="AlertDialogStyle" parent="Theme.AppCompat.DayNight.Dialog">
+        <item name="android:background">#A5DD7B</item>
+        <item name="android:textColor">#FFFFFF</item>
     </style>
-
 
     <style name="Widget.Shrine.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="hintTextAppearance">@style/TextAppearance.Shrine.TextInputLayout.HintText</item>

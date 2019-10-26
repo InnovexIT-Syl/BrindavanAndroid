@@ -17,7 +17,7 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import net.innovexit.brindavan.models.ServiceProvider;
+import net.innovexit.brindavan.models.ServiceProviderModels;
 import net.innovexit.brindavan.R;
 
 public class ServiceProviderActivity extends AppCompatActivity {
@@ -61,15 +61,19 @@ public class ServiceProviderActivity extends AppCompatActivity {
 
         if (!hasValidationErrors(_name, _phoneNumber, _address, _workingExperience)) {
 
-            CollectionReference serviceProviderCollectionReference = database.collection("ServiceProvider");
+            CollectionReference serviceProviderCollectionReference = database.collection("ServiceProviderModels");
 
-            ServiceProvider serviceProvider = new ServiceProvider(_name, _phoneNumber, _address, _workingExperience);
+            ServiceProviderModels serviceProviderModels = new ServiceProviderModels(_name, _phoneNumber, _address, _workingExperience);
 
-            serviceProviderCollectionReference.add(serviceProvider)
+            serviceProviderCollectionReference.add(serviceProviderModels)
                     .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                         @Override
                         public void onSuccess(DocumentReference documentReference) {
-                            Toast.makeText(ServiceProviderActivity.this, "ServiceProvider data is saved", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ServiceProviderActivity.this, "ServiceProviderModels data is saved", Toast.LENGTH_SHORT).show();
+                            name.setText("");
+                            phoneNumber.setText("");
+                            address.setText("");
+                            workingExperience.setText("");
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
