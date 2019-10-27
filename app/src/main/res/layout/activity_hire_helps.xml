@@ -250,7 +250,7 @@
                 </TextView>
 
                 <ImageButton
-                    android:id="@+id/image_6"
+                    android:id="@+id/taxiCab"
                     android:layout_width="140dp"
                     android:layout_height="170dp"
                     android:layout_below="@id/driver"
@@ -266,7 +266,7 @@
                     android:layout_width="140dp"
                     android:layout_height="30dp"
                     android:layout_alignStart="@+id/admin"
-                    android:layout_alignBottom="@+id/image_6"
+                    android:layout_alignBottom="@+id/taxiCab"
                     android:layout_marginStart="154dp"
                     android:background="@drawable/text_background"
                     android:text="Taxi Cab"

@@ -3,6 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="net.innovexit.brindavan">
 
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".application.BrindavanApplication"
         android:allowBackup="true"
@@ -12,7 +20,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Shrine"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".activities.ServiceActivityForResident"/>
+        <activity android:name=".activities.HireNewHelpsActivity"></activity>
+        <activity android:name=".activities.ServiceActivityForResident" />
         <activity android:name=".activities.ChatActivity" />
         <activity android:name=".activities.CameraActivity" />
         <activity android:name=".activities.SecurityManagerActivity" />
@@ -43,13 +52,5 @@
                 android:value="barcode" />
         </activity>
     </application>
-    <uses-feature android:name="android.hardware.camera.autofocus" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

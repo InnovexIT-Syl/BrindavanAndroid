@@ -20,8 +20,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import net.innovexit.brindavan.R;
 import net.innovexit.brindavan.models.ServiceRequestModels;
 
-public class HireNewHelpActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
-
+public class HireNewHelpsActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener{
     TextView serviceType;
     EditText name, phoneNumber, serviceProviderName, residentName, address, workingExperience;
     Button addRequest;
@@ -30,7 +29,7 @@ public class HireNewHelpActivity extends AppCompatActivity implements PopupMenu.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hire_new_help);
+        setContentView(R.layout.activity_hire_new_helps);
 
         serviceType = findViewById(R.id.serviceTypeText);
 
@@ -55,47 +54,6 @@ public class HireNewHelpActivity extends AppCompatActivity implements PopupMenu.
         });
 
     }
-
-    private void saveInformation() {
-        String _name = name.getText().toString().trim();
-        String _phoneNumber = phoneNumber.getText().toString().trim();
-        String _serviceProviderName = serviceProviderName.getText().toString().trim();
-        String _residentName = residentName.getText().toString().trim();
-        String _address = address.getText().toString().trim();
-        String _workingExperience = workingExperience.getText().toString().trim();
-        String _serviceType = serviceType.getText().toString().trim();
-
-        if (!hasValidationErrors(_name, _phoneNumber, _address, _serviceProviderName, _residentName, _serviceType, _workingExperience)) {
-
-            DocumentReference ServiceRequestReference = database.collection("Complex").document("Complex_service")
-                    .collection("Complex_service_requests").document("Complex_service_requests_data");
-
-            ServiceRequestModels serviceRequestModels = new ServiceRequestModels(_name, _phoneNumber, _address, _serviceProviderName, _residentName, _serviceType, _workingExperience);
-
-
-            ServiceRequestReference.set(serviceRequestModels)
-                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void aVoid) {
-                            Toast.makeText(HireNewHelpActivity.this, "ServiceRequests data is saved", Toast.LENGTH_SHORT).show();
-                            name.setText("");
-                            phoneNumber.setText("");
-                            serviceProviderName.setText("");
-                            residentName.setText("");
-                            address.setText("");
-                            serviceType.setText("");
-                            workingExperience.setText("");
-
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(HireNewHelpActivity.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
-    }
-
 
     private boolean hasValidationErrors(String _name, String _phoneNumber, String _address, String _serviceProviderName, String _residentName, String _serviceType, String _experience) {
         if (_name.isEmpty()) {
@@ -139,6 +97,45 @@ public class HireNewHelpActivity extends AppCompatActivity implements PopupMenu.
         return false;
     }
 
+    private void saveInformation() {
+        String _name = name.getText().toString().trim();
+        String _phoneNumber = phoneNumber.getText().toString().trim();
+        String _serviceProviderName = serviceProviderName.getText().toString().trim();
+        String _residentName = residentName.getText().toString().trim();
+        String _address = address.getText().toString().trim();
+        String _workingExperience = workingExperience.getText().toString().trim();
+        String _serviceType = serviceType.getText().toString().trim();
+
+        if (!hasValidationErrors(_name, _phoneNumber, _address, _serviceProviderName, _residentName, _serviceType, _workingExperience)) {
+
+            DocumentReference ServiceRequestReference = database.collection("Complex").document("Complex_service")
+                    .collection("Complex_service_requests").document("Complex_service_requests_data");
+
+            ServiceRequestModels serviceRequestModels = new ServiceRequestModels(_name, _phoneNumber, _address, _serviceProviderName, _residentName, _serviceType, _workingExperience);
+
+
+            ServiceRequestReference.set(serviceRequestModels)
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Toast.makeText(HireNewHelpsActivity.this, "ServiceRequests data is saved", Toast.LENGTH_SHORT).show();
+                            name.setText("");
+                            phoneNumber.setText("");
+                            serviceProviderName.setText("");
+                            residentName.setText("");
+                            address.setText("");
+                            serviceType.setText("");
+                            workingExperience.setText("");
+
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(HireNewHelpsActivity.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+    }
 
     public void showPopUp(View v) {
         PopupMenu popupMenu = new PopupMenu(this, v);
@@ -151,13 +148,19 @@ public class HireNewHelpActivity extends AppCompatActivity implements PopupMenu.
     public boolean onMenuItemClick(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.one:
-                serviceType.setText("ONE");
+                serviceType.setText("Maid");
                 return true;
             case R.id.two:
-                serviceType.setText("TWO");
+                serviceType.setText("Guest");
                 return true;
             case R.id.three:
-                serviceType.setText("THREE");
+                serviceType.setText("Police Officer");
+                return true;
+            case R.id.four:
+                serviceType.setText("Driver");
+                return true;
+            case R.id.five:
+                serviceType.setText("Taxi Cab");
                 return true;
             default:
                 return false;

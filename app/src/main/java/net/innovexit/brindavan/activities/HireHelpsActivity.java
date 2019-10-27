@@ -20,7 +20,8 @@ import net.innovexit.brindavan.R;
 
 public class HireHelpsActivity extends AppCompatActivity {
 
-    ImageButton maid;
+    ImageButton maid, guest, police_officer, driver, taxiCab;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,10 +30,39 @@ public class HireHelpsActivity extends AppCompatActivity {
         setUpToolbar();
 
         maid = findViewById(R.id.maid);
+        guest = findViewById(R.id.guest);
+        police_officer = findViewById(R.id.police_officer);
+        driver = findViewById(R.id.driver);
+        taxiCab = findViewById(R.id.taxiCab);
+
         maid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),HireNewHelpActivity.class));
+                goToActivity();
+            }
+        });
+        guest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToActivity();
+            }
+        });
+        police_officer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToActivity();
+            }
+        });
+        driver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToActivity();
+            }
+        });
+        taxiCab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToActivity();
             }
         });
 
@@ -47,6 +77,9 @@ public class HireHelpsActivity extends AppCompatActivity {
 
     }
 
+    public void goToActivity() {
+        startActivity(new Intent(this, HireNewHelpsActivity.class));
+    }
 
     private void setUpToolbar() {
         Toolbar toolbar = findViewById(R.id.hire_app_bar);
