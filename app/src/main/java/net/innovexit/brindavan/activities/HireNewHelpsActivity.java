@@ -99,7 +99,7 @@ public class HireNewHelpsActivity extends AppCompatActivity {
 
         Date date = Calendar.getInstance().getTime();
 //        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy hh:mm:ss a");
-       SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy hh a");
+       SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
         String currentDate = dateFormat.format(date);
 
 
