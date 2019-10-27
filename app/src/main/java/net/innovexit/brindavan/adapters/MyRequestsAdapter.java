@@ -52,7 +52,6 @@ public class MyRequestsAdapter extends RecyclerView.Adapter<MyRequestsAdapter.My
         MyRequestModel requestDetailsModel = requestListFilter.get(position);
 
         holder.setServicePersonName(requestDetailsModel.getServicePersonName());
-        holder.setPersonJob(requestDetailsModel.getPersonJob());
         holder.setPhoneNumber(requestDetailsModel.getPhoneNumber());
         holder.setServiceCompany(requestDetailsModel.getServiceCompany());
         holder.setServiceCategory(requestDetailsModel.getPersonJob());
@@ -142,7 +141,7 @@ public class MyRequestsAdapter extends RecyclerView.Adapter<MyRequestsAdapter.My
 
     class MyRequestDetailsViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView servicePersonName, personJob, phoneNumber, serviceCompany, serviceCategory, serviceDate, serviceUnit;
+        private TextView servicePersonName, phoneNumber, serviceCompany, serviceCategory, serviceDate, serviceUnit;
         LinearLayout expandLayout;
         RelativeLayout headerLayout;
 
@@ -152,7 +151,6 @@ public class MyRequestsAdapter extends RecyclerView.Adapter<MyRequestsAdapter.My
         MyRequestDetailsViewHolder(View itemView) {
             super(itemView);
             servicePersonName = itemView.findViewById(R.id.serviceProviderName);
-            personJob = itemView.findViewById(R.id.serviceProviderJob);
             phoneNumber = itemView.findViewById(R.id.serviceProviderNumber);
             serviceCompany = itemView.findViewById(R.id.serviceProviderLtd);
             headerLayout = itemView.findViewById(R.id.headerLayout);
@@ -164,10 +162,6 @@ public class MyRequestsAdapter extends RecyclerView.Adapter<MyRequestsAdapter.My
         }
        private void setServicePersonName(String name) {
             servicePersonName.setText(name);
-        }
-
-        private void setPersonJob(String job) {
-            personJob.setText(job);
         }
 
         private void setPhoneNumber(String number) {

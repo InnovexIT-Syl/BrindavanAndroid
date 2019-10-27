@@ -23,6 +23,7 @@ public class HelpGuestActivity extends AppCompatActivity {
         findViewById(R.id.open_camera).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(getApplicationContext(), CameraActivity.class);
                 startActivity(intent);
             }

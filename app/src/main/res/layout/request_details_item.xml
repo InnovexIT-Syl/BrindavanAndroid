@@ -13,7 +13,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:background="#00BCD4"
+                android:background="#B984D9E7"
                 android:orientation="horizontal">
 
                 <TextView
@@ -21,6 +21,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/down"
+                    android:layout_centerVertical="true"
                     android:layout_alignParentStart="true"
                     android:textStyle="bold"
                     android:text=" Driver"
@@ -31,6 +32,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
                     android:textStyle="bold"
                     android:text="12-02-2019"
                     android:padding="5dp"/>
@@ -39,28 +41,44 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="40dp"
                     android:textStyle="bold"
                     android:text="Unit-C"
                     android:padding="5dp"/>
+
+                <ImageView
+                    android:id="@+id/goDirect"
+                    android:layout_width="30dp"
+                    android:layout_height="25dp"
+                    android:visibility="visible"
+                    android:layout_marginStart="10dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    app:srcCompat="@drawable/go_direct"
+                    android:contentDescription="TODO" />
+                <ImageView
+                    android:id="@+id/call"
+                    android:layout_width="30dp"
+                    android:layout_height="25dp"
+                    android:visibility="gone"
+                    android:layout_marginStart="10dp"
+                    android:layout_alignParentEnd="true"
+                    app:srcCompat="@drawable/call"
+                    android:contentDescription="TODO" />
+
             </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:visibility="gone"
+        android:visibility="visible"
         android:padding="5dp"
         android:background="@color/colorPrimaryDark"
         android:id="@+id/expandLayout">
 
-            <ImageView
-                android:id="@+id/serviceProviderPhoto"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center_horizontal"
-                android:tint="@color/textColorSecondary"
-                app:srcCompat="@drawable/people"
-                android:contentDescription="TODO" />
+
 
         <TextView
             android:id="@+id/serviceProviderName"
@@ -71,16 +89,6 @@
             android:textColor="@color/textColorSecondary"
             android:text="Service Person"
             android:padding="5dp"/>
-
-        <TextView
-            android:id="@+id/serviceProviderJob"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textColor="@color/textColorSecondary"
-            android:text="Job"
-            android:padding="5dp"/>
-
 
         <TextView
             android:id="@+id/serviceProviderNumber"

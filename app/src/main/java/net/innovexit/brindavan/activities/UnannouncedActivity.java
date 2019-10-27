@@ -20,9 +20,6 @@ import net.innovexit.brindavan.R;
 
 public class UnannouncedActivity extends AppCompatActivity {
 
-    MaterialButton homeBtn, noticeBtn, vehicleBtn, familyBtn, residentBtn, communicateBtn, dailyBtn, helpGuestBtn, hireBtn, serviceBtn, sosBtn, unannouncedBtn;
-
-    Intent intentNotice, intentVehicle, intentFamily, intentResident, intentHome, intentDaily, intentGuestHelp, intentHire, intentService, intentSoS, intentCommunicate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,13 +34,6 @@ public class UnannouncedActivity extends AppCompatActivity {
     private void setUpToolbar() {
         Toolbar toolbar = findViewById(R.id.unannounced_app_bar);
         this.setSupportActionBar(toolbar);
-
-        //        toolbar.setNavigationOnClickListener(new NavigationIconClickListener(
-//                this,
-//                findViewById(R.id.communicateContainer),findViewById(R.id.commuMenu),
-//                new AccelerateDecelerateInterpolator(),
-//                this.getResources().getDrawable(R.drawable.menu), // Menu open icon
-//                this.getResources().getDrawable(R.drawable.shr_close_menu))); // Menu close icon
 
         toolbar.setNavigationIcon(R.drawable.backspace);
 
