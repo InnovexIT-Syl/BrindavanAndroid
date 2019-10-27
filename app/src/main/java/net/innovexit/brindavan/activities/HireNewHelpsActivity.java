@@ -25,6 +25,10 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import net.innovexit.brindavan.R;
 import net.innovexit.brindavan.models.ServiceRequestModels;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class HireNewHelpsActivity extends AppCompatActivity {
 
     EditText name, phoneNumber, others, serviceType;
@@ -99,11 +103,16 @@ public class HireNewHelpsActivity extends AppCompatActivity {
         accessButton = findViewById(selectedId);
         String _accessType = accessButton.getText().toString().trim();
 
+        Date date = Calendar.getInstance().getTime();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
+        String currentDate = dateFormat.format(date);
+
+
         if (!hasValidationErrors(_name, _phoneNumber, _serviceType, _others)) {
 
-            CollectionReference ServiceRequestReference = database.collection("Complex").document("Resident").collection("Service Request");
+            CollectionReference ServiceRequestReference = database.collection("Complex").document("Resident").collection("ServiceRequest");
 
-            ServiceRequestModels serviceRequestModels = new ServiceRequestModels(_name, _phoneNumber, _serviceType, _accessType, _others);
+            ServiceRequestModels serviceRequestModels = new ServiceRequestModels(_name, _phoneNumber, _serviceType, _accessType, _others,currentDate);
 
             ServiceRequestReference.add(serviceRequestModels).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                 @Override
