@@ -6,6 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -18,10 +19,7 @@ import net.innovexit.brindavan.R;
 
 
 public class CommunicateGateActivity extends AppCompatActivity {
-
-    MaterialButton homeBtn, noticeBtn, vehicleBtn, familyBtn, residentBtn, communicateBtn, dailyBtn, helpGuestBtn, hireBtn, serviceBtn, sosBtn, unannouncedBtn;
-
-    Intent intentNotice, intentVehicle, intentFamily, intentResident, intentHome, intentDaily, intentGuestHelp, intentHire, intentService, intentSoS, intentUnannounced;
+    ImageButton parcel,guest,police,driver,taxiCab;
 
     Toolbar toolbar;
 
@@ -32,68 +30,55 @@ public class CommunicateGateActivity extends AppCompatActivity {
 
         setUpToolbar();
 
-        VehicleLogsActivity navigate = new VehicleLogsActivity();
+        parcel = findViewById(R.id.parcel);
+        guest = findViewById(R.id.guest);
+        police = findViewById(R.id.police);
+        driver = findViewById(R.id.driver);
+        taxiCab = findViewById(R.id.taxiCab);
 
-        homeBtn = findViewById(R.id.home);
-        noticeBtn = findViewById(R.id.notice);
-        vehicleBtn = findViewById(R.id.vehicle);
-        familyBtn = findViewById(R.id.family);
-        residentBtn = findViewById(R.id.resident);
-        communicateBtn = findViewById(R.id.communicate);
-        dailyBtn = findViewById(R.id.helps);
-        helpGuestBtn = findViewById(R.id.help_guest);
-        hireBtn = findViewById(R.id.hire);
-        serviceBtn = findViewById(R.id.service);
-        sosBtn = findViewById(R.id.sos);
-        unannouncedBtn = findViewById(R.id.unannounced);
+        parcel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToActivity("Parcel");
+            }
+        });
+        guest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToActivity("Guest");
+            }
+        });
+        police.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToActivity("Police Officer");
+            }
+        });
+        driver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToActivity("Driver");
+            }
+        });
+        taxiCab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToActivity("TaxiCab");
+            }
+        });
 
-        intentNotice = new Intent(this, NoticeBoardActivity.class);
-        intentVehicle = new Intent(this, VehicleLogsActivity.class);
-        intentFamily = new Intent(this, FamilyMembersActivity.class);
-        intentResident = new Intent(this, ResidentDirActivity.class);
-        intentHome = new Intent(this, HomeActivity.class);
-        intentDaily = new Intent(this, DailyHelpsActivity.class);
-        intentGuestHelp = new Intent(this, HelpGuestActivity.class);
-        intentHire = new Intent(this, HireHelpsActivity.class);
-        intentService = new Intent(this, ServiceActivity.class);
-        intentSoS = new Intent(this, SoSActivity.class);
-        intentUnannounced = new Intent(this, UnannouncedActivity.class);
+    }
 
-        navigate.navigateTo(this, communicateBtn, getIntent(), true);
-        navigate.navigateTo(this, noticeBtn, intentNotice, false);
-        navigate.navigateTo(this, vehicleBtn, intentVehicle, false);
-        navigate.navigateTo(this, familyBtn, intentFamily, false);
-        navigate.navigateTo(this, residentBtn, intentResident, false);
-        navigate.navigateTo(this, homeBtn, intentHome, false);
-        navigate.navigateTo(this, dailyBtn, intentDaily, false);
-        navigate.navigateTo(this, helpGuestBtn, intentGuestHelp, false);
-        navigate.navigateTo(this, hireBtn, intentHire, false);
-        navigate.navigateTo(this, serviceBtn, intentService, false);
-        navigate.navigateTo(this, sosBtn, intentSoS, false);
-        navigate.navigateTo(this, unannouncedBtn, intentUnannounced, false);
-
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            findViewById(R.id.communicateContainer).setBackgroundResource(R.drawable.shr_product_grid_background_shape);
-        } else {
-            ApiDialog apiDialog = new ApiDialog();
-            apiDialog.showDialog(this);
-        }
-
-
+    private void goToActivity(String value) {
+        Intent intent = new Intent(this,HireNewHelpsActivity.class);
+        intent.putExtra("value",value);
+        startActivity(intent);
     }
 
 
     private void setUpToolbar() {
         Toolbar toolbar = findViewById(R.id.communicate_app_bar);
         this.setSupportActionBar(toolbar);
-
-//        toolbar.setNavigationOnClickListener(new NavigationIconClickListener(
-//                this,
-//                findViewById(R.id.communicateContainer),findViewById(R.id.commuMenu),
-//                new AccelerateDecelerateInterpolator(),
-//                this.getResources().getDrawable(R.drawable.menu), // Menu open icon
-//                this.getResources().getDrawable(R.drawable.shr_close_menu))); // Menu close icon
 
         toolbar.setNavigationIcon(R.drawable.backspace);
 

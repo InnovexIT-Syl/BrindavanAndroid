@@ -4,20 +4,18 @@ import java.io.Serializable;
 
 public class ServiceRequestModels implements Serializable {
 
-    private String name, phoneNumber, address, serviceProviderName,residentName,serviceType,workingExperience;
+    private String name, phoneNumber, others, accessType,serviceType;
 
     public ServiceRequestModels() {
 
     }
 
-    public ServiceRequestModels(String name, String phoneNumber, String address, String serviceProviderName, String residentName, String serviceType, String workingExperience) {
+    public ServiceRequestModels(String name, String phoneNumber, String serviceType,String accessType,String others) {
         this.name = name;
         this.phoneNumber = phoneNumber;
-        this.address = address;
-        this.serviceProviderName = serviceProviderName;
-        this.residentName = residentName;
         this.serviceType = serviceType;
-        this.workingExperience = workingExperience;
+        this.accessType = accessType;
+        this.others = others;
     }
 
     public String getName() {
@@ -28,23 +26,15 @@ public class ServiceRequestModels implements Serializable {
         return phoneNumber;
     }
 
-    public String getAddress() {
-        return address;
+    public String getOthers() {
+        return others;
     }
 
-    public String getServiceProviderName() {
-        return serviceProviderName;
-    }
-
-    public String getResidentName() {
-        return residentName;
+    public String getAccessType() {
+        return accessType;
     }
 
     public String getServiceType() {
         return serviceType;
-    }
-
-    public String getWorkingExperience() {
-        return workingExperience;
     }
 }

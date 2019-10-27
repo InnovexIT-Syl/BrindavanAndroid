@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     tools:context=".activities.HireNewHelpsActivity">
+
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -41,11 +42,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginTop="30dp"
                 android:fontFamily="sans-serif"
                 android:text="Hire New Help "
                 android:textAlignment="center"
-                android:layout_gravity="center"
                 android:textColor="#00BCD4"
                 android:textSize="30sp"
                 android:textStyle="bold" />
@@ -110,38 +111,6 @@
                         android:inputType="phone"
                         android:padding="5dp"
                         android:textColor="#0A0A0A" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Service Provider Name"
-                        android:textColor="#DFD3D3"
-                        android:textSize="25dp" />
-
-                    <EditText
-                        android:id="@+id/serviceProviderName"
-                        android:layout_width="match_parent"
-                        android:layout_height="45dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/edit_text_style_2"
-                        android:hint="name"
-                        android:padding="5dp"
-                        android:textColor="#0A0A0A" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Resident Name"
-                        android:textColor="#DFD3D3"
-                        android:textSize="25dp" />
-
-                    <EditText
-                        android:id="@+id/residentName"
-                        android:layout_width="match_parent"
-                        android:layout_height="45dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/edit_text_style_2"
-                        android:hint="name"
-                        android:padding="5dp"
-                        android:textColor="#0A0A0A" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -151,50 +120,13 @@
                         android:textColor="#DFD3D3"
                         android:textSize="25dp" />
 
-                    <LinearLayout
-                        android:layout_marginBottom="3dp"
-                        android:orientation="horizontal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                        <TextView
-                            android:id="@+id/serviceTypeText"
-                            android:layout_gravity="center"
-                            android:layout_width="260dp"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="5dp"
-                            android:background="@drawable/edit_text_style_2"
-                            android:padding="7dp"
-                            android:textSize="20dp"
-                            android:textColor="#0A0A0A" />
-                        <ImageButton
-                            android:onClick="showPopUp"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="5dp"
-                            android:id="@+id/serviceType"
-                            android:layout_width="50dp"
-                            android:layout_height="48dp"
-                            android:background="#3A3A37"
-                            android:layout_marginTop="5dp"
-                            android:src="@drawable/option"
-                            android:padding="5dp"/>
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="Passcode"
-                        android:textColor="#DFD3D3"
-                        android:textSize="25dp" />
-
                     <EditText
-                        android:id="@+id/address"
+                        android:id="@+id/serviceType"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:layout_marginTop="5dp"
                         android:background="@drawable/edit_text_style_2"
-                        android:hint="address"
-                        android:inputType="textPostalAddress"
+                        android:hint="type"
                         android:padding="5dp"
                         android:textColor="#0A0A0A" />
 
@@ -202,18 +134,50 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="Working Experience"
+                        android:text="Choose Action Type"
+                        android:textColor="#DFD3D3"
+                        android:textSize="25dp" />
+                    <RadioGroup
+                        android:id="@+id/radioGroupId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/maleId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Call Resident"
+                            android:textColor="#FFFFFF"
+                            android:textSize="22dp" />
+
+                        <RadioButton
+                            android:id="@+id/femaleId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Direct Pass"
+                            android:textColor="#FFFFFF"
+                            android:textSize="22dp" />
+
+                    </RadioGroup>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Others"
                         android:textColor="#DFD3D3"
                         android:textSize="25dp" />
 
+
                     <EditText
-                        android:id="@+id/workingExperience"
+                        android:id="@+id/others"
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
                         android:layout_marginTop="5dp"
                         android:background="@drawable/edit_text_style_2"
                         android:gravity="top"
-                        android:hint="experience"
+                        android:hint="others"
                         android:padding="5dp"
                         android:textColor="#0A0A0A" />
 
@@ -223,7 +187,7 @@
                         android:layout_height="55dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="5dp"
-                        android:text="Add Request"
+                        android:text="ADD REQUEST"
                         android:textAllCaps="false"
                         android:textColor="#FFFF"
                         android:textSize="22dp" />
