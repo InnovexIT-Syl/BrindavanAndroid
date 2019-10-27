@@ -54,15 +54,9 @@ public class ServiceActivity extends AppCompatActivity {
         getItemList();
 
         recyclerView = findViewById(R.id.requestList);
-
         requestItemAdapter = new MyRequestsAdapter(getApplicationContext(),items);
-
         recyclerView.setLayoutManager(new LinearLayoutManager(ServiceActivity.this));
-
         recyclerView.setAdapter(requestItemAdapter);
-
-
-
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             findViewById(R.id.serviceContainer).setBackgroundResource(R.drawable.shr_product_grid_background_shape);
@@ -73,7 +67,6 @@ public class ServiceActivity extends AppCompatActivity {
         }
 
         inputSearch = findViewById(R.id.serviceSearch);
-
         inputSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {
@@ -92,14 +85,9 @@ public class ServiceActivity extends AppCompatActivity {
 
             }
         });
-
-
-
     }
 
     private void getItemList() {
-
-
           reference.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
               @Override
               public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -108,7 +96,6 @@ public class ServiceActivity extends AppCompatActivity {
                               snapshot.getString("others"),snapshot.getString("phoneNumber"), snapshot.getString("currentDate"),snapshot.getString("accessType"));
 
                       items.add(model);
-
                   }
 
               }
@@ -118,30 +105,7 @@ public class ServiceActivity extends AppCompatActivity {
                   Toast.makeText(ServiceActivity.this, "Problem on retrieving data!", Toast.LENGTH_SHORT).show();
               }
           });
-
-
-//        items.add(new MyRequestModel("Adil Varma","Doctor","+9028474","HealthLtd","12-09-2019","Unit-B" ));
-//        items.add(new MyRequestModel("Aminul Islam","Electrician","+345654","Sigma Electronis","24-09-2018","Unit-C" ));
-//        items.add(new MyRequestModel("M Rahat","Maid","+4565764","Self Employed","10-12-2019","Unit-A" ));
-//        items.add(new MyRequestModel("Adil Varma","Doctor","+9028474","HealthLtd","01-10-2019","Unit-D" ));
-//        items.add(new MyRequestModel("Aminul Islam","Electrician","+345654","Sigma Electronis","02-08-2017","Unit-E" ));
-//        items.add(new MyRequestModel("M Rahat","Cook","+4565764","Self Employed","21-09-2019","Unit-F" ));
-//        items.add(new MyRequestModel("Adil Varma","Doctor","+9028474","HealthLtd","12-09-2019","Unit-H" ));
-//        items.add(new MyRequestModel("Aminul Islam","Electrician","+345654","Sigma Electronis","12-09-2019","Unit-B" ));
-//        items.add(new MyRequestModel("M Rahat","Maid","+4565764","Self Employed","12-09-2019","Unit-G" ));
-//        items.add(new MyRequestModel("Adil Varma","Doctor","+9028474","HealthLtd","12-09-2019","Unit-B" ));
-//        items.add(new MyRequestModel("Aminul Islam","Electrician","+345654","Sigma Electronis","24-09-2018","Unit-C" ));
-//        items.add(new MyRequestModel("M Rahat","Maid","+4565764","Self Employed","10-12-2019","Unit-A" ));
-//        items.add(new MyRequestModel("Adil Varma","Doctor","+9028474","HealthLtd","01-10-2019","Unit-D" ));
-//        items.add(new MyRequestModel("Aminul Islam","Electrician","+345654","Sigma Electronis","02-08-2017","Unit-E" ));
-//        items.add(new MyRequestModel("M Rahat","Cook","+4565764","Self Employed","21-09-2019","Unit-F" ));
-//        items.add(new MyRequestModel("Adil Varma","Doctor","+9028474","HealthLtd","12-09-2019","Unit-H" ));
-//        items.add(new MyRequestModel("Aminul Islam","Electrician","+345654","Sigma Electronis","12-09-2019","Unit-B" ));
-//        items.add(new MyRequestModel("M Rahat","Maid","+4565764","Self Employed","12-09-2019","Unit-G" ));
-
-
     }
-
 
     private void setUpToolbar() {
         Toolbar toolbar = findViewById(R.id.service_app_bar);

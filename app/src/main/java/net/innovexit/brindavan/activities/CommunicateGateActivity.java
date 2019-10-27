@@ -2,19 +2,13 @@ package net.innovexit.brindavan.activities;
 
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.google.android.material.button.MaterialButton;
-
-import net.innovexit.brindavan.ApiDialog;
-import net.innovexit.brindavan.NavigationIconClickListener;
 import net.innovexit.brindavan.R;
 
 
@@ -70,7 +64,7 @@ public class CommunicateGateActivity extends AppCompatActivity {
     }
 
     private void goToActivity(String value) {
-        Intent intent = new Intent(this,HireNewHelpsActivity.class);
+        Intent intent = new Intent(this, HireNewHelpsActivity.class);
         intent.putExtra("value",value);
         startActivity(intent);
     }

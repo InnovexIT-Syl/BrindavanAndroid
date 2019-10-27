@@ -2,19 +2,20 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     xmlns:android="http://schemas.android.com/apk/res/android">
     <corners
-        android:bottomLeftRadius="20dp"
-        android:bottomRightRadius="20dp"
-        android:topLeftRadius="20dp"
-        android:topRightRadius="20dp">
+        android:bottomLeftRadius="30dp"
+        android:bottomRightRadius="30dp"
+        android:topLeftRadius="30dp"
+        android:topRightRadius="30dp">
     </corners>
     <solid android:color="#272725"></solid>
-    <stroke android:color="#000000"></stroke>
+    <stroke android:color="#F1EEEE"
+        android:width="2dp"></stroke>
     <gradient android:centerColor="#241E1E"
         android:startColor="#FFE600"
         android:angle="45"
         android:endColor="#4776EC"
         android:gradientRadius="180dp"
         android:type="radial"
-        ></gradient>
+        />
 
 </shape>

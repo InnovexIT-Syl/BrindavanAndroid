@@ -6,14 +6,11 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.PopupMenu;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -30,13 +27,11 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class HireNewHelpsActivity extends AppCompatActivity {
-
     EditText name, phoneNumber, others, serviceType;
     Button addRequest;
     private FirebaseFirestore database;
     private RadioGroup radioGroup;
     private RadioButton accessButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,8 +66,7 @@ public class HireNewHelpsActivity extends AppCompatActivity {
         });
 
     }
-
-    private boolean hasValidationErrors(String _name, String _phoneNumber, String _serviceType, String _others) {
+    private boolean hasValidationErrors(String _name, String _phoneNumber, String _serviceType) {
         if (_name.isEmpty()) {
             name.setError("Name required");
             name.requestFocus();
@@ -104,11 +98,12 @@ public class HireNewHelpsActivity extends AppCompatActivity {
         String _accessType = accessButton.getText().toString().trim();
 
         Date date = Calendar.getInstance().getTime();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
+//        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy hh:mm:ss a");
+       SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy hh a");
         String currentDate = dateFormat.format(date);
 
 
-        if (!hasValidationErrors(_name, _phoneNumber, _serviceType, _others)) {
+        if (!hasValidationErrors(_name, _phoneNumber, _serviceType)) {
 
             CollectionReference serviceRequestReference = database.collection("Complex");
             DocumentReference reference = serviceRequestReference.document("Resident");
@@ -123,6 +118,7 @@ public class HireNewHelpsActivity extends AppCompatActivity {
                     phoneNumber.setText("");
                     serviceType.setText("");
                     others.setText("");
+
                     Toast.makeText(HireNewHelpsActivity.this, "Service Request Data Added", Toast.LENGTH_SHORT).show();
                 }
             }).addOnFailureListener(new OnFailureListener() {
