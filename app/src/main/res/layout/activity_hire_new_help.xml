@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".activities.HireNewHelpActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/hire_app_bar"
+            style="@style/Widget.Shrine.Toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:paddingStart="12dp"
+            android:paddingLeft="12dp"
+            android:paddingEnd="12dp"
+            android:paddingRight="12dp"
+            app:contentInsetStart="0dp"
+            app:navigationIcon="@drawable/backspace"
+            app:title="Request New Service" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="sans-serif"
+                android:text="Hire New Help "
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:textColor="#00BCD4"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/apartmentName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/background_style"
+                android:fontFamily="sans-serif"
+                android:padding="10dp"
+                android:text="New Help Request"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/text_bg_style_1"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Name"
+                        android:textColor="#DFD3D3"
+                        android:textSize="25dp" />
+
+                    <EditText
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/edit_text_style_2"
+                        android:hint="name"
+                        android:inputType="text"
+                        android:padding="5dp"
+                        android:textColor="#0A0A0A" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Phone Number"
+                        android:textColor="#DFD3D3"
+                        android:textSize="25dp" />
+
+                    <EditText
+                        android:id="@+id/phoneNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/edit_text_style_2"
+                        android:hint="phone number"
+                        android:inputType="phone"
+                        android:padding="5dp"
+                        android:textColor="#0A0A0A" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Service Provider Name"
+                        android:textColor="#DFD3D3"
+                        android:textSize="25dp" />
+
+                    <EditText
+                        android:id="@+id/serviceProviderName"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/edit_text_style_2"
+                        android:hint="name"
+                        android:padding="5dp"
+                        android:textColor="#0A0A0A" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Resident Name"
+                        android:textColor="#DFD3D3"
+                        android:textSize="25dp" />
+
+                    <EditText
+                        android:id="@+id/residentName"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/edit_text_style_2"
+                        android:hint="name"
+                        android:padding="5dp"
+                        android:textColor="#0A0A0A" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Service type"
+                        android:textColor="#DFD3D3"
+                        android:textSize="25dp" />
+
+                    <LinearLayout
+                        android:layout_marginBottom="3dp"
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/serviceTypeText"
+                            android:layout_gravity="center"
+                            android:layout_width="260dp"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/edit_text_style_2"
+                            android:padding="7dp"
+                            android:textSize="20dp"
+                            android:textColor="#0A0A0A" />
+                        <ImageButton
+                            android:onClick="showPopUp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="5dp"
+                            android:id="@+id/serviceType"
+                            android:layout_width="50dp"
+                            android:layout_height="48dp"
+                            android:background="#3A3A37"
+                            android:layout_marginTop="5dp"
+                            android:src="@drawable/option"
+                            android:padding="5dp"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Passcode"
+                        android:textColor="#DFD3D3"
+                        android:textSize="25dp" />
+
+                    <EditText
+                        android:id="@+id/address"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/edit_text_style_2"
+                        android:hint="address"
+                        android:inputType="textPostalAddress"
+                        android:padding="5dp"
+                        android:textColor="#0A0A0A" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Working Experience"
+                        android:textColor="#DFD3D3"
+                        android:textSize="25dp" />
+
+                    <EditText
+                        android:id="@+id/workingExperience"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/edit_text_style_2"
+                        android:gravity="top"
+                        android:hint="experience"
+                        android:padding="5dp"
+                        android:textColor="#0A0A0A" />
+
+                    <Button
+                        android:id="@+id/addRequest"
+                        android:layout_width="wrap_content"
+                        android:layout_height="55dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:text="Add Request"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFF"
+                        android:textSize="22dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
