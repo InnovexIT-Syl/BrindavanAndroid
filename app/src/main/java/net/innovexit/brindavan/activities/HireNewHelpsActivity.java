@@ -2,7 +2,9 @@ package net.innovexit.brindavan.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,6 +33,7 @@ public class HireNewHelpsActivity extends AppCompatActivity implements PopupMenu
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hire_new_helps);
 
+        setUpToolbar();
         serviceType = findViewById(R.id.serviceTypeText);
 
         // init database
@@ -170,5 +173,18 @@ public class HireNewHelpsActivity extends AppCompatActivity implements PopupMenu
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 
+    }
+
+    private void setUpToolbar() {
+        Toolbar toolbar = findViewById(R.id.hire_app_bar);
+        this.setSupportActionBar(toolbar);
+        toolbar.setNavigationIcon(R.drawable.backspace);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+            }
+        });
     }
 }
