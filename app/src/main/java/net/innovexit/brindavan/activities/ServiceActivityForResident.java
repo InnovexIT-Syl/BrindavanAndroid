@@ -132,27 +132,6 @@ public class ServiceActivityForResident extends AppCompatActivity {
             }
         });
 
-
-//        requestList.add(new MyRequestModel("Adil Varma","Doctor","+9028474","HealthLtd","12-09-2019","" ));
-//        requestList.add(new MyRequestModel("Aminul Islam","Electrician","+345654","Sigma Electronis","12-09-2019","" ));
-//        requestList.add(new MyRequestModel("M Rahat","Maid","+4565764","Self Employed","12-09-2019","" ));
-//        requestList.add(new MyRequestModel("Adil Varma","Doctor","+9028474","HealthLtd","12-09-2019","" ));
-//        requestList.add(new MyRequestModel("Aminul Islam","Electrician","+345654","Sigma Electronis","12-09-2019","" ));
-//        requestList.add(new MyRequestModel("M Rahat","Maid","+4565764","Self Employed","12-09-2019","" ));
-//        requestList.add(new MyRequestModel("Adil Varma","Doctor","+9028474","HealthLtd","12-09-2019","" ));
-//        requestList.add(new MyRequestModel("Aminul Islam","Electrician","+345654","Sigma Electronis","12-09-2019","" ));
-//        requestList.add(new MyRequestModel("M Rahat","Maid","+4565764","Self Employed","12-09-2019","" ));
-//        requestList.add(new MyRequestModel("Adil Varma","Doctor","+9028474","HealthLtd","12-09-2019","" ));
-//        requestList.add(new MyRequestModel("Aminul Islam","Electrician","+345654","Sigma Electronis","24-09-2018","" ));
-//        requestList.add(new MyRequestModel("M Rahat","Maid","+4565764","Self Employed","10-12-2019","" ));
-//        requestList.add(new MyRequestModel("Adil Varma","Doctor","+9028474","HealthLtd","01-10-2019","" ));
-//        requestList.add(new MyRequestModel("Aminul Islam","Electrician","+345654","Sigma Electronis","02-08-2017","" ));
-//        requestList.add(new MyRequestModel("M Rahat","Cook","+4565764","Self Employed","21-09-2019","" ));
-//        requestList.add(new MyRequestModel("Adil Varma","Doctor","+9028474","HealthLtd","12-09-2019","" ));
-//        requestList.add(new MyRequestModel("Aminul Islam","Electrician","+345654","Sigma Electronis","12-09-2019","" ));
-//        requestList.add(new MyRequestModel("M Rahat","Maid","+4565764","Self Employed","12-09-2019","" ));
-//
-
     }
 
     private void setUpToolbar() {

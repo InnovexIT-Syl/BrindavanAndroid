@@ -9,6 +9,6 @@
     <color name="loginPageBackgroundColor">#FFFFFF</color>
     <color name="productGridBackgroundColor">#2F3436</color>
     <color name="textInputOutlineColor">#FBB8AC</color>
-    <color name="listBackground">#0C3E42</color>
+    <color name="listBackground">#6663D6</color>
     <color name="listItemBackground">#DA252525</color>
 </resources>

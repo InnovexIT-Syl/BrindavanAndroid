@@ -10,7 +10,7 @@
         <item name="android:textColorPrimary">@color/textColorPrimary</item>
     </style>
     <style name="AlertDialogStyle" parent="Theme.AppCompat.DayNight.Dialog">
-        <item name="android:background">#A5DD7B</item>
+        <item name="android:background">#145092</item>
         <item name="android:textColor">#FFFFFF</item>
     </style>
 

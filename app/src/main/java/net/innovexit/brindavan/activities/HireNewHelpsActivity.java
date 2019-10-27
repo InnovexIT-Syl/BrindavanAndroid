@@ -110,11 +110,13 @@ public class HireNewHelpsActivity extends AppCompatActivity {
 
         if (!hasValidationErrors(_name, _phoneNumber, _serviceType, _others)) {
 
-            CollectionReference ServiceRequestReference = database.collection("Complex").document("Resident").collection("ServiceRequest");
+            CollectionReference serviceRequestReference = database.collection("Complex");
+            DocumentReference reference = serviceRequestReference.document("Resident");
+            CollectionReference serviceRequestCollectionReference = reference.collection("ServiceRequest");
 
             ServiceRequestModels serviceRequestModels = new ServiceRequestModels(_name, _phoneNumber, _serviceType, _accessType, _others,currentDate);
 
-            ServiceRequestReference.add(serviceRequestModels).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+            serviceRequestCollectionReference.add(serviceRequestModels).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                 @Override
                 public void onSuccess(DocumentReference documentReference) {
                     name.setText("");

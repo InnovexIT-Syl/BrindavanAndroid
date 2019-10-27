@@ -100,27 +100,23 @@
                     android:id="@+id/btn1"
                     android:layout_width="200dp"
                     android:layout_height="60dp"
-                    android:layout_below="@id/toolbar"
-                    android:layout_centerInParent="true"
-                    android:background="@drawable/sigin_style"
+                    android:background="@drawable/button_style_1"
                     android:gravity="center"
                     android:text="Add Security Guard" />
 
                 <Button
+                    android:background="@drawable/button_style_1"
                     android:id="@+id/btn2"
                     android:layout_width="200dp"
                     android:layout_height="60dp"
-                    android:layout_below="@id/toolbar"
-                    android:layout_centerInParent="true"
                     android:gravity="center"
                     android:text="Add Manager" />
 
                 <Button
+                    android:background="@drawable/button_style_1"
                     android:id="@+id/btn3"
                     android:layout_width="200dp"
                     android:layout_height="60dp"
-                    android:layout_below="@id/toolbar"
-                    android:layout_centerInParent="true"
                     android:gravity="center"
                     android:text="Add Member" />
             </LinearLayout>

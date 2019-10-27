@@ -50,10 +50,10 @@
 
         <Button
             android:id="@+id/signIn"
-            android:layout_width="150dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@drawable/background_style"
+            android:background="@drawable/button_style"
             android:onClick="goMainPage"
             android:padding="10dp"
             android:text="@string/signIn"

@@ -51,7 +51,7 @@ public class CommunicateGateActivity extends AppCompatActivity {
         police.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                goToActivity("Police Officer");
+                goToActivity("Police");
             }
         });
         driver.setOnClickListener(new View.OnClickListener() {
