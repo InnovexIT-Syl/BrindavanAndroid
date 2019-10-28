@@ -46,6 +46,9 @@ public class CameraActivity extends AppCompatActivity {
     private static final int REQUEST_CAMERA_CODE = 2;
     private static String[] PERMISSIONS_CAMERA = {Manifest.permission.CAMERA};
 
+    private static final int REQUEST_AUDIO_CODE = 3;
+    private static String[] PERMISSIONS_AUDIO = {Manifest.permission.RECORD_AUDIO};
+
 
     CameraView cameraView;
     boolean isDetected = false;
@@ -178,10 +181,17 @@ public class CameraActivity extends AppCompatActivity {
 
     private void varifyCameraPermission() {
 
-        // Check if we have write permission
+        // Check if we have camera permission
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED) {
                 requestPermissions(PERMISSIONS_CAMERA, REQUEST_CAMERA_CODE);
+            }
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (checkSelfPermission(Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_DENIED) {
+
+                requestPermissions(PERMISSIONS_AUDIO, REQUEST_AUDIO_CODE);
             }
         }
     }
