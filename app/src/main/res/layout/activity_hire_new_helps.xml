@@ -44,7 +44,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
                 android:fontFamily="sans-serif"
-                android:text="Hire New Help "
+                android:text="Request A Service"
                 android:textAlignment="center"
                 android:textColor="#00BCD4"
                 android:textSize="30sp"
@@ -59,7 +59,7 @@
                 android:background="@drawable/background_style"
                 android:fontFamily="sans-serif"
                 android:padding="10dp"
-                android:text="New Help Request"
+                android:text="Service Request"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -164,19 +164,19 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="Others"
+                        android:text="Unit No"
                         android:textColor="#DFD3D3"
                         android:textSize="22dp" />
 
 
                     <EditText
-                        android:id="@+id/others"
+                        android:id="@+id/unitNumber"
                         android:layout_width="match_parent"
-                        android:layout_height="70dp"
+                        android:layout_height="45dp"
                         android:layout_marginTop="5dp"
                         android:background="@drawable/edit_text_style_2"
                         android:gravity="top"
-                        android:hint="others"
+                        android:hint="Unit"
                         android:padding="5dp"
                         android:textColor="#0A0A0A" />
 

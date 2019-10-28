@@ -8,8 +8,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -41,6 +43,9 @@ import java.util.List;
 
 public class CameraActivity extends AppCompatActivity {
 
+    private static final int REQUEST_CAMERA_CODE = 2;
+    private static String[] PERMISSIONS_CAMERA = {Manifest.permission.CAMERA};
+
 
     CameraView cameraView;
     boolean isDetected = false;
@@ -53,6 +58,9 @@ public class CameraActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
+
+        varifyCameraPermission();
+
         Dexter.withActivity(this)
                 .withPermissions(Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO)
                 .withListener(new MultiplePermissionsListener() {
@@ -166,5 +174,15 @@ public class CameraActivity extends AppCompatActivity {
                 //.setRotation(frame.getRotation()) // it is used for only landscape
                 .build();
         return FirebaseVisionImage.fromByteArray(data, metadata);
+    }
+
+    private void varifyCameraPermission() {
+
+        // Check if we have write permission
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED) {
+                requestPermissions(PERMISSIONS_CAMERA, REQUEST_CAMERA_CODE);
+            }
+        }
     }
 }

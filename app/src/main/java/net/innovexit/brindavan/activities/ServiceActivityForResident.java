@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -40,6 +41,8 @@ public class ServiceActivityForResident extends AppCompatActivity {
 
     MyRequestsAdapter myRequestsAdapter;
 
+    private ProgressDialog progressDialog;
+
 
     private EditText inputSearch;
     private List<MyRequestModel> items = new ArrayList<>();
@@ -51,6 +54,10 @@ public class ServiceActivityForResident extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service_for_resident);
+
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Fetching data...");
+        progressDialog.show();
 
         getRequestList();
 
@@ -71,7 +78,7 @@ public class ServiceActivityForResident extends AppCompatActivity {
         addNew.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), HireHelpsActivity.class));
+                startActivity(new Intent(getApplicationContext(), CommunicateGateActivity.class));
             }
         });
 
@@ -118,9 +125,10 @@ public class ServiceActivityForResident extends AppCompatActivity {
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 for(DocumentSnapshot snapshot : Objects.requireNonNull(task.getResult())){
                     MyRequestModel model = new MyRequestModel(snapshot.getString("name"), snapshot.getString("serviceType"),
-                            snapshot.getString("others"),snapshot.getString("phoneNumber"), snapshot.getString("currentDate"),snapshot.getString("accessType"));
+                            snapshot.getString("phoneNumber"),snapshot.getString("accessType"), snapshot.getString("unitNo"),snapshot.getString("currentDate"));
 
                     items.add(model);
+                    progressDialog.hide();
 
                 }
 

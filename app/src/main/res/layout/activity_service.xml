@@ -107,7 +107,6 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/requestList"
-            android:background="@color/listBackground"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/titleOfList"/>

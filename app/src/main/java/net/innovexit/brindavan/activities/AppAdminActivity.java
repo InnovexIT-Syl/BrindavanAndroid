@@ -3,8 +3,10 @@ package net.innovexit.brindavan.activities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.os.Build;
@@ -50,6 +52,8 @@ public class AppAdminActivity extends AppCompatActivity {
     private EditText inputTextQR1, inputTextQR2, inputTextQR3;
     private ImageView showQrImage;
 
+    private static final int REQUEST_EXTERNAL_STORAGE = 1;
+    private static String[] PERMISSIONS_STORAGE = {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
     String TAG = "GenerateQRCode";
     String savePath = Environment.getExternalStorageDirectory().getPath() + "/QRCode/";
@@ -60,6 +64,9 @@ public class AppAdminActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app_admin);
+
+
+        varifyStoragePermission();
 
         mContext = getApplicationContext();
         setUpToolbar();
@@ -225,11 +232,13 @@ public class AppAdminActivity extends AppCompatActivity {
         saveQrCode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 boolean save;
+
                 String result, name = "image";
                 try {
                     save = QRGSaver.save(savePath, name, bitmap, QRGContents.ImageType.IMAGE_JPEG);
-                    result = save ? "Image Saved" : "Image Not Saved";
+                    result = save ? "Image Saved to"+savePath : "Image Not Saved";
                     Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -251,6 +260,16 @@ public class AppAdminActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), HomeActivity.class));
             }
         });
+    }
+
+    private void varifyStoragePermission() {
+
+        // Check if we have write permission
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
+                requestPermissions(PERMISSIONS_STORAGE, REQUEST_EXTERNAL_STORAGE);
+            }
+        }
     }
 }
 

@@ -51,7 +51,7 @@
                     android:id="@+id/goDirect"
                     android:layout_width="30dp"
                     android:layout_height="25dp"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     android:layout_marginStart="10dp"
                     android:layout_centerVertical="true"
                     android:layout_alignParentEnd="true"

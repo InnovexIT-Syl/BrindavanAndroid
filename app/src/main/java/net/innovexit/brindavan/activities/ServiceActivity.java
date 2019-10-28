@@ -1,6 +1,7 @@
 package net.innovexit.brindavan.activities;
 
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -41,6 +42,7 @@ public class ServiceActivity extends AppCompatActivity {
     private List<MyRequestModel> items = new ArrayList<>();
     private EditText inputSearch;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private ProgressDialog progressDialog;
 
     CollectionReference reference = db.collection("Complex").document("Resident").collection("ServiceRequest");
 
@@ -50,6 +52,10 @@ public class ServiceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_service);
 
         setUpToolbar();
+
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Fetching data...");
+        progressDialog.show();
 
         getItemList();
 
@@ -93,9 +99,10 @@ public class ServiceActivity extends AppCompatActivity {
               public void onComplete(@NonNull Task<QuerySnapshot> task) {
                   for(DocumentSnapshot snapshot : Objects.requireNonNull(task.getResult())){
                       MyRequestModel model = new MyRequestModel(snapshot.getString("name"), snapshot.getString("serviceType"),
-                              snapshot.getString("others"),snapshot.getString("phoneNumber"), snapshot.getString("currentDate"),snapshot.getString("accessType"));
+                              snapshot.getString("phoneNumber"),snapshot.getString("accessType"), snapshot.getString("unitNo"),snapshot.getString("currentDate"));
 
                       items.add(model);
+                      progressDialog.hide();
                   }
 
               }

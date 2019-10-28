@@ -27,7 +27,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class HireNewHelpsActivity extends AppCompatActivity {
-    EditText name, phoneNumber, others, serviceType;
+    EditText name, phoneNumber, unitNo, serviceType;
     Button addRequest;
     private FirebaseFirestore database;
     private RadioGroup radioGroup;
@@ -45,8 +45,8 @@ public class HireNewHelpsActivity extends AppCompatActivity {
         name = findViewById(R.id.name);
         phoneNumber = findViewById(R.id.phoneNumber);
         serviceType = findViewById(R.id.serviceType);
-        others = findViewById(R.id.others);
-        others.setText("");
+        unitNo = findViewById(R.id.unitNumber);
+        unitNo.setText("");
 
         addRequest = findViewById(R.id.addRequest);
 
@@ -90,7 +90,7 @@ public class HireNewHelpsActivity extends AppCompatActivity {
     private void saveInformation() {
         String _name = name.getText().toString().trim();
         String _phoneNumber = phoneNumber.getText().toString().trim();
-        String _others = others.getText().toString().trim();
+        String _unitNo = unitNo.getText().toString().trim();
         String _serviceType = serviceType.getText().toString().trim();
 
         int selectedId = radioGroup.getCheckedRadioButtonId();
@@ -99,7 +99,7 @@ public class HireNewHelpsActivity extends AppCompatActivity {
 
         Date date = Calendar.getInstance().getTime();
 //        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy hh:mm:ss a");
-       SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
+       SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yy");
         String currentDate = dateFormat.format(date);
 
 
@@ -109,7 +109,7 @@ public class HireNewHelpsActivity extends AppCompatActivity {
             DocumentReference reference = serviceRequestReference.document("Resident");
             CollectionReference serviceRequestCollectionReference = reference.collection("ServiceRequest");
 
-            ServiceRequestModels serviceRequestModels = new ServiceRequestModels(_name, _phoneNumber, _serviceType, _accessType, _others,currentDate);
+            ServiceRequestModels serviceRequestModels = new ServiceRequestModels(_name, _phoneNumber, _serviceType, _accessType, _unitNo,currentDate);
 
             serviceRequestCollectionReference.add(serviceRequestModels).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                 @Override
@@ -117,7 +117,7 @@ public class HireNewHelpsActivity extends AppCompatActivity {
                     name.setText("");
                     phoneNumber.setText("");
                     serviceType.setText("");
-                    others.setText("");
+                    unitNo.setText("");
 
                     Toast.makeText(HireNewHelpsActivity.this, "Service Request Data Added", Toast.LENGTH_SHORT).show();
                 }

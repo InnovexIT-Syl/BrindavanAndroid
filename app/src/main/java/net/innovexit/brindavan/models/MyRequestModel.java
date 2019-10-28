@@ -2,13 +2,13 @@ package net.innovexit.brindavan.models;
 
 public class MyRequestModel {
 
-    private String servicePersonName, personJob, phoneNumber, serviceCompany, serviceDate, serviceUnit;
+    private String servicePersonName, personJob, phoneNumber, accessType, serviceDate, serviceUnit;
 
-    public MyRequestModel(String servicePersonName, String personJob, String phoneNumber, String serviceCompany, String serviceDate, String serviceUnit) {
+    public MyRequestModel(String servicePersonName, String personJob, String phoneNumber, String accessType, String serviceDate, String serviceUnit) {
         this.servicePersonName = servicePersonName;
         this.personJob = personJob;
         this.phoneNumber = phoneNumber;
-        this.serviceCompany = serviceCompany;
+        this.accessType = accessType;
         this.serviceDate = serviceDate;
         this.serviceUnit = serviceUnit;
     }
@@ -54,11 +54,11 @@ public class MyRequestModel {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getServiceCompany() {
-        return serviceCompany;
+    public String getAccessType() {
+        return accessType;
     }
 
-    public void setServiceCompany(String serviceCompany) {
-        this.serviceCompany = serviceCompany;
+    public void setAccessType(String accessType) {
+        this.accessType = accessType;
     }
 }

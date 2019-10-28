@@ -9,6 +9,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -32,6 +33,8 @@ public class MyRequestsAdapter extends RecyclerView.Adapter<MyRequestsAdapter.My
     private boolean clicked = false;
 
 
+
+
     public MyRequestsAdapter(Context context, List<MyRequestModel> requestList) {
         this.context = context;
         this.requestList = requestList;
@@ -47,16 +50,25 @@ public class MyRequestsAdapter extends RecyclerView.Adapter<MyRequestsAdapter.My
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyRequestDetailsViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final MyRequestDetailsViewHolder holder, final int position) {
 
-        MyRequestModel requestDetailsModel = requestListFilter.get(position);
+        final MyRequestModel requestDetailsModel = requestListFilter.get(position);
 
         holder.setServicePersonName(requestDetailsModel.getServicePersonName());
         holder.setPhoneNumber(requestDetailsModel.getPhoneNumber());
-        holder.setServiceCompany(requestDetailsModel.getServiceCompany());
+        holder.setServiceCompany(requestDetailsModel.getAccessType());
         holder.setServiceCategory(requestDetailsModel.getPersonJob());
         holder.setServiceDate(requestDetailsModel.getServiceDate());
         holder.setServiceUnit(requestDetailsModel.getServiceUnit());
+
+        if (requestDetailsModel.getAccessType().contains("Direct Pass")){
+            holder.callResident.setVisibility(View.GONE);
+            holder.directPass.setVisibility(View.VISIBLE);
+        }
+        if (requestDetailsModel.getAccessType().contains("Call Resident")){
+            holder.callResident.setVisibility(View.VISIBLE);
+            holder.directPass.setVisibility(View.GONE);
+        }
 
         //creating an animation
 
@@ -68,6 +80,14 @@ public class MyRequestsAdapter extends RecyclerView.Adapter<MyRequestsAdapter.My
             @Override
             public void onClick(View view) {
 
+                if (requestDetailsModel.getAccessType().contains("Direct Pass")){
+                    holder.callResident.setVisibility(View.GONE);
+                    holder.directPass.setVisibility(View.VISIBLE);
+                }
+                if (requestDetailsModel.getAccessType().contains("Call Resident")){
+                    holder.callResident.setVisibility(View.VISIBLE);
+                    holder.directPass.setVisibility(View.GONE);
+                }
                 clicked = !clicked;
 
                 //getting the position of the item to expand it
@@ -144,7 +164,7 @@ public class MyRequestsAdapter extends RecyclerView.Adapter<MyRequestsAdapter.My
         private TextView servicePersonName, phoneNumber, serviceCompany, serviceCategory, serviceDate, serviceUnit;
         LinearLayout expandLayout;
         RelativeLayout headerLayout;
-
+        ImageView callResident, directPass;
 
 
 
@@ -158,6 +178,8 @@ public class MyRequestsAdapter extends RecyclerView.Adapter<MyRequestsAdapter.My
             serviceCategory = itemView.findViewById(R.id.requestCategory);
             serviceDate = itemView.findViewById(R.id.requestDate);
             serviceUnit = itemView.findViewById(R.id.unitNo);
+            callResident = itemView.findViewById(R.id.call);
+            directPass = itemView.findViewById(R.id.goDirect);
 
         }
        private void setServicePersonName(String name) {
