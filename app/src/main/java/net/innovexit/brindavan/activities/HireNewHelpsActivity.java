@@ -124,7 +124,7 @@ public class HireNewHelpsActivity extends AppCompatActivity {
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(HireNewHelpsActivity.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(HireNewHelpsActivity.this, "Failed to upload data!" + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
         }

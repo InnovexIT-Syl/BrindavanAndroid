@@ -4,13 +4,13 @@ public class MyRequestModel {
 
     private String servicePersonName, personJob, phoneNumber, accessType, serviceDate, serviceUnit;
 
-    public MyRequestModel(String servicePersonName, String personJob, String phoneNumber, String accessType, String serviceDate, String serviceUnit) {
+    public MyRequestModel(String servicePersonName, String personJob, String phoneNumber, String accessType, String serviceUnit, String serviceDate) {
         this.servicePersonName = servicePersonName;
         this.personJob = personJob;
         this.phoneNumber = phoneNumber;
         this.accessType = accessType;
-        this.serviceDate = serviceDate;
         this.serviceUnit = serviceUnit;
+        this.serviceDate = serviceDate;
     }
 
 
