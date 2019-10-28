@@ -4,18 +4,18 @@ import java.io.Serializable;
 
 public class ServiceRequestModels implements Serializable {
 
-    private String name, phoneNumber,  accessType, serviceType, unitNo, currentDate;
+    private String name, phoneNumber, uniteNo, accessType, serviceType, currentDate;
 
     public ServiceRequestModels() {
 
     }
 
-    public ServiceRequestModels(String name, String phoneNumber, String serviceType, String accessType, String unitNo, String currentDate) {
+    public ServiceRequestModels(String name, String phoneNumber, String serviceType, String accessType, String uniteNo, String currentDate) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.serviceType = serviceType;
         this.accessType = accessType;
-        this.unitNo = unitNo;
+        this.uniteNo = uniteNo;
         this.currentDate = currentDate;
     }
 
@@ -27,8 +27,8 @@ public class ServiceRequestModels implements Serializable {
         return phoneNumber;
     }
 
-    public String getUnitNo() {
-        return unitNo;
+    public String getUniteNo() {
+        return uniteNo;
     }
 
     public String getAccessType() {

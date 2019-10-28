@@ -32,6 +32,7 @@ public class HireNewHelpsActivity extends AppCompatActivity {
     private FirebaseFirestore database;
     private RadioGroup radioGroup;
     private RadioButton accessButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +67,8 @@ public class HireNewHelpsActivity extends AppCompatActivity {
         });
 
     }
-    private boolean hasValidationErrors(String _name, String _phoneNumber, String _serviceType) {
+
+    private boolean hasValidationErrors(String _name, String _phoneNumber, String _serviceType, String _unitNo) {
         if (_name.isEmpty()) {
             name.setError("Name required");
             name.requestFocus();
@@ -81,6 +83,12 @@ public class HireNewHelpsActivity extends AppCompatActivity {
         if (_serviceType.isEmpty()) {
             serviceType.setError("Service type is always is required");
             serviceType.requestFocus();
+            return true;
+        }
+
+        if (_unitNo.isEmpty()) {
+            unitNo.setError("Unit No is always is required");
+            unitNo.requestFocus();
             return true;
         }
 
@@ -99,17 +107,17 @@ public class HireNewHelpsActivity extends AppCompatActivity {
 
         Date date = Calendar.getInstance().getTime();
 //        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy hh:mm:ss a");
-       SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("hh:mm a");
         String currentDate = dateFormat.format(date);
 
 
-        if (!hasValidationErrors(_name, _phoneNumber, _serviceType)) {
+        if (!hasValidationErrors(_name, _phoneNumber, _serviceType, _unitNo)) {
 
             CollectionReference serviceRequestReference = database.collection("Complex");
             DocumentReference reference = serviceRequestReference.document("Resident");
             CollectionReference serviceRequestCollectionReference = reference.collection("ServiceRequest");
 
-            ServiceRequestModels serviceRequestModels = new ServiceRequestModels(_name, _phoneNumber, _serviceType, _accessType, _unitNo,currentDate);
+            ServiceRequestModels serviceRequestModels = new ServiceRequestModels(_name, _phoneNumber, _serviceType, _accessType, _unitNo, currentDate);
 
             serviceRequestCollectionReference.add(serviceRequestModels).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                 @Override
@@ -119,7 +127,8 @@ public class HireNewHelpsActivity extends AppCompatActivity {
                     serviceType.setText("");
                     unitNo.setText("");
 
-                    Toast.makeText(HireNewHelpsActivity.this, "Service Request Data Added", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(HireNewHelpsActivity.this, "Service Request Data Added", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(getApplicationContext(), ServiceActivityForResident.class));
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
