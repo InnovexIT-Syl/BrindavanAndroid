@@ -1,50 +1,34 @@
 {
   "project_info": {
-    "project_number": "281819274967",
-    "firebase_url": "https://brindavan-ff63c.firebaseio.com",
-    "project_id": "brindavan-ff63c",
-    "storage_bucket": "brindavan-ff63c.appspot.com"
+    "project_number": "945990240123",
+    "firebase_url": "https://firestoredemo-35bfb.firebaseio.com",
+    "project_id": "firestoredemo-35bfb",
+    "storage_bucket": "firestoredemo-35bfb.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:281819274967:android:02b7055bb1adbcd2b11a92",
+        "mobilesdk_app_id": "1:945990240123:android:807ceea7edfabe7559dfde",
         "android_client_info": {
           "package_name": "net.innovexit.brindavan"
         }
       },
       "oauth_client": [
         {
-          "client_id": "281819274967-3b210lamtd46g964ojcbr3tjeeqt982g.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "net.innovexit.brindavan",
-            "certificate_hash": "889668b75e8f54c9a49b32c3cf5ff66c265edf9d"
-          }
-        },
-        {
-          "client_id": "281819274967-fo1b83a4aju4o29is783fqk1eu4b1jpg.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "net.innovexit.brindavan",
-            "certificate_hash": "b8a9302ec77e345b5b73e6c64fed810365a1857d"
-          }
-        },
-        {
-          "client_id": "281819274967-eiro0hga1b0gldidk0ocp5dg43esps9r.apps.googleusercontent.com",
+          "client_id": "945990240123-m8c49ru7o5ok98sps7n2mjlong73an4l.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCZtmO90H5rxGNvWmTLYDjEnYp4bkQDzic"
+          "current_key": "AIzaSyB97fEJ9fBAl3ccge0BWhlGfLPIDygS4G0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "281819274967-eiro0hga1b0gldidk0ocp5dg43esps9r.apps.googleusercontent.com",
+              "client_id": "945990240123-m8c49ru7o5ok98sps7n2mjlong73an4l.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
