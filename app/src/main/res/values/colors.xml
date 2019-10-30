@@ -11,4 +11,6 @@
     <color name="textInputOutlineColor">#FBB8AC</color>
     <color name="listBackground">#6663D6</color>
     <color name="listItemBackground">#DA252525</color>
+    <color name="header_bg_color">#00B131</color>
+    <color name="header_reject_color">#F02626</color>
 </resources>

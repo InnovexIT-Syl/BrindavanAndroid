@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
@@ -60,6 +61,20 @@ public class MyRequestsAdapter extends RecyclerView.Adapter<MyRequestsAdapter.My
         holder.setServiceCategory(requestDetailsModel.getPersonJob());
         holder.setServiceDate(requestDetailsModel.getServiceDate());
         holder.setServiceUnit(requestDetailsModel.getServiceUnit());
+        holder.allow.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        holder.reject.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
         if (requestDetailsModel.getAccessType().contains("Direct Pass")){
             holder.callResident.setVisibility(View.GONE);
@@ -162,9 +177,10 @@ public class MyRequestsAdapter extends RecyclerView.Adapter<MyRequestsAdapter.My
     class MyRequestDetailsViewHolder extends RecyclerView.ViewHolder{
 
         private TextView servicePersonName, phoneNumber, serviceCompany, serviceCategory, serviceDate, serviceUnit;
-        LinearLayout expandLayout;
+        RelativeLayout expandLayout;
         RelativeLayout headerLayout;
         ImageView callResident, directPass;
+        Button allow, reject;
 
 
 
@@ -180,6 +196,8 @@ public class MyRequestsAdapter extends RecyclerView.Adapter<MyRequestsAdapter.My
             serviceUnit = itemView.findViewById(R.id.unitNo);
             callResident = itemView.findViewById(R.id.call);
             directPass = itemView.findViewById(R.id.goDirect);
+            allow = itemView.findViewById(R.id.allowBtn);
+            reject = itemView.findViewById(R.id.rejectBtn);
 
         }
        private void setServicePersonName(String name) {

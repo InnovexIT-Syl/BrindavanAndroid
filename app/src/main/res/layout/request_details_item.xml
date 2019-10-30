@@ -70,10 +70,9 @@
 
             </RelativeLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:visibility="visible"
         android:padding="5dp"
         android:background="@color/colorPrimaryDark"
@@ -83,7 +82,7 @@
 
         <TextView
             android:id="@+id/serviceProviderName"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:layout_marginTop="10dp"
@@ -93,9 +92,10 @@
 
         <TextView
             android:id="@+id/serviceProviderNumber"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAlignment="center"
+            android:layout_below="@id/serviceProviderName"
             android:textColor="@color/textColorSecondary"
             android:text="Contatct Number"
             android:padding="5dp"/>
@@ -104,13 +104,40 @@
 
         <TextView
             android:id="@+id/serviceProviderLtd"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/textColorSecondary"
             android:text="Provider Company"
+            android:layout_below="@+id/serviceProviderNumber"
             android:textAlignment="center"
             android:padding="5dp"/>
-    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentEnd="true">
+            <Button
+                android:id="@+id/allowBtn"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:text="Allow"
+                android:layout_margin="5dp"
+                android:backgroundTint="@android:color/holo_green_light"
+                android:textAllCaps="false"
+                />
+            <Button
+                android:id="@+id/rejectBtn"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_margin="5dp"
+                android:backgroundTint="@android:color/holo_red_light"
+                android:textAllCaps="false"
+                android:text="Reject"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
 
 
 </LinearLayout>
