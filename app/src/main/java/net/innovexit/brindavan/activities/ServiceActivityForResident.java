@@ -131,7 +131,8 @@ public class ServiceActivityForResident extends AppCompatActivity {
                     MyRequestModel model = new MyRequestModel(snapshot.getString(
                             "correspondingname"), snapshot.getString("servicerequesttype"),
                             snapshot.getString("phone"),snapshot.getString("requirenotificationonentry"),
-                            snapshot.getString("unitnum"),snapshot.getString("requesteddate"));
+                            snapshot.getString("unitnum"),snapshot.getString("requesteddate"),
+                            snapshot.getReference(),snapshot.getString("suspend"));
 
                     items.add(model);
                     progressDialog.hide();

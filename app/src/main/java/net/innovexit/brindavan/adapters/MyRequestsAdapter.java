@@ -2,6 +2,7 @@ package net.innovexit.brindavan.adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,11 +19,22 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import net.innovexit.brindavan.R;
 import net.innovexit.brindavan.models.MyRequestModel;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import static com.android.volley.VolleyLog.TAG;
 
 public class MyRequestsAdapter extends RecyclerView.Adapter<MyRequestsAdapter.MyRequestDetailsViewHolder> implements Filterable {
 
@@ -32,6 +44,12 @@ public class MyRequestsAdapter extends RecyclerView.Adapter<MyRequestsAdapter.My
     private List<MyRequestModel> requestListFilter;
     private static int currentPosition;
     private boolean clicked = false;
+
+
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private CollectionReference databaseCollectionReference = db.collection("Complex");
+    private DocumentReference reference = databaseCollectionReference.document("kwtfIEYu1k0AHJ9VXQ81");
+    private CollectionReference serviceRequestCollectionReference = reference.collection("complex_servicerequests");
 
 
 
@@ -50,6 +68,7 @@ public class MyRequestsAdapter extends RecyclerView.Adapter<MyRequestsAdapter.My
         return new MyRequestDetailsViewHolder(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull final MyRequestDetailsViewHolder holder, final int position) {
 
@@ -61,17 +80,66 @@ public class MyRequestsAdapter extends RecyclerView.Adapter<MyRequestsAdapter.My
         holder.setServiceCategory(requestDetailsModel.getPersonJob());
         holder.setServiceDate(requestDetailsModel.getServiceDate());
         holder.setServiceUnit(requestDetailsModel.getServiceUnit());
+
+        if (requestDetailsModel.isSuspend().equals("true")){
+            holder.allow.setVisibility(View.GONE);
+            holder.reject.setVisibility(View.GONE);
+            holder.requestStatus.setVisibility(View.VISIBLE);
+            holder.requestStatus.setText("Rejected");
+        }if (requestDetailsModel.isSuspend().equals("false")){
+            holder.allow.setVisibility(View.GONE);
+            holder.reject.setVisibility(View.GONE);
+            holder.requestStatus.setVisibility(View.VISIBLE);
+            holder.requestStatus.setText("Allowed");
+        }
+
         holder.allow.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
+                Map<String, Object> data = new HashMap<>();
+                data.put("suspend", "false");
+                requestDetailsModel.getDocRef().update(data).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        holder.allow.setVisibility(View.GONE);
+                        holder.reject.setVisibility(View.GONE);
+                        holder.requestStatus.setVisibility(View.VISIBLE);
+                        holder.requestStatus.setText("Allowed");
+                        Log.d("Success", "DocumentSnapshot successfully updated!");
+                    }
+                })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.w("Wrong", "Error updating document ", e);
+                            }
+                        });
             }
         });
         holder.reject.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
+                Map<String, Object> data = new HashMap<>();
+                data.put("suspend", "true");
+                requestDetailsModel.getDocRef().update(data).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        holder.allow.setVisibility(View.GONE);
+                        holder.reject.setVisibility(View.GONE);
+                        holder.requestStatus.setVisibility(View.VISIBLE);
+                        holder.requestStatus.setText("Rejected");
+                        Log.d("Success", "DocumentSnapshot successfully updated! " );
+                    }
+                })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.w("Wrong", "Error updating document" + e);
+                            }
+                        });
 
             }
         });
@@ -176,7 +244,8 @@ public class MyRequestsAdapter extends RecyclerView.Adapter<MyRequestsAdapter.My
 
     class MyRequestDetailsViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView servicePersonName, phoneNumber, serviceCompany, serviceCategory, serviceDate, serviceUnit;
+        private TextView servicePersonName, phoneNumber, serviceCompany, serviceCategory,
+        serviceDate, serviceUnit, requestStatus;
         RelativeLayout expandLayout;
         RelativeLayout headerLayout;
         ImageView callResident, directPass;
@@ -198,6 +267,7 @@ public class MyRequestsAdapter extends RecyclerView.Adapter<MyRequestsAdapter.My
             directPass = itemView.findViewById(R.id.goDirect);
             allow = itemView.findViewById(R.id.allowBtn);
             reject = itemView.findViewById(R.id.rejectBtn);
+            requestStatus = itemView.findViewById(R.id.requestStatus);
 
         }
        private void setServicePersonName(String name) {

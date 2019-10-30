@@ -110,7 +110,7 @@ public class HireNewHelpsActivity extends AppCompatActivity {
         String requesteddate = dateFormat.format(date);
         String requirenotificationonentry = accessButton.getText().toString().trim();
         String servicerequesttype = serviceType.getText().toString().trim();
-        String unitnum = unitNo.getText().toString().trim();
+        String unitnum = "Unit-"+unitNo.getText().toString().trim();
         String deliverytype = "undefined";
         String delverynote = "undefined";
         String adhocvisitorphoto = "undefined";
@@ -123,7 +123,7 @@ public class HireNewHelpsActivity extends AppCompatActivity {
         int serviceproviderid = 678;
         int servicerequestormemberuserid = 955;
         String startdate = "undefined";
-        boolean suspend = false;
+        String suspend = "undefined";
         boolean terminate = false;
 
 
@@ -168,7 +168,7 @@ public class HireNewHelpsActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                startActivity(new Intent(getApplicationContext(), CommunicateGateActivity.class));
             }
         });
     }

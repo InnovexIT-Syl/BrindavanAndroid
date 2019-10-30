@@ -22,7 +22,7 @@ public class ServiceRequestModels implements Serializable {
     private int serviceproviderid;
     private int servicerequestormemberuserid;
     private String startdate;
-    private boolean suspend;
+    private String suspend;
     private boolean terminate;
 
 
@@ -33,7 +33,7 @@ public class ServiceRequestModels implements Serializable {
                                 String notes_instructions, int requesterid, String requestertype,
                                 int serviceprovider_requestnumber,
                                 int serviceproviderid, int servicerequestormemberuserid,
-                                String startdate, boolean suspend, boolean terminate) {
+                                String startdate, String suspend, boolean terminate) {
         this.correspondingname = correspondingname;
         this.phone = phone;
         this.requesteddate = requesteddate;
@@ -128,7 +128,7 @@ public class ServiceRequestModels implements Serializable {
         return startdate;
     }
 
-    public boolean getSuspend() {
+    public String getSuspend() {
         return suspend;
     }
 

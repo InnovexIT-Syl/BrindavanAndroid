@@ -1,16 +1,41 @@
 package net.innovexit.brindavan.models;
 
+import com.google.firebase.firestore.DocumentReference;
+
 public class MyRequestModel {
 
-    private String servicePersonName, personJob, phoneNumber, accessType, serviceDate, serviceUnit;
+    private String servicePersonName, personJob, phoneNumber, accessType, serviceDate,
+    serviceUnit;
+    private DocumentReference docRef;
+    String isSuspend;
 
-    public MyRequestModel(String servicePersonName, String personJob, String phoneNumber, String accessType, String serviceUnit, String serviceDate) {
+    public DocumentReference getDocRef() {
+        return docRef;
+    }
+
+    public void setDocRef(DocumentReference docRef) {
+        this.docRef = docRef;
+    }
+
+    public String isSuspend() {
+        return isSuspend;
+    }
+
+    public void setSuspend(String suspend) {
+        isSuspend = suspend;
+    }
+
+    public MyRequestModel(String servicePersonName, String personJob, String phoneNumber,
+                          String accessType, String serviceUnit, String serviceDate,
+                          DocumentReference docRef, String isSuspend) {
         this.servicePersonName = servicePersonName;
         this.personJob = personJob;
         this.phoneNumber = phoneNumber;
         this.accessType = accessType;
         this.serviceUnit = serviceUnit;
         this.serviceDate = serviceDate;
+        this.docRef = docRef;
+        this.isSuspend = isSuspend;
     }
 
 
