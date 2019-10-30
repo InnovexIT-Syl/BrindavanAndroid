@@ -96,28 +96,49 @@ public class HireNewHelpsActivity extends AppCompatActivity {
     }
 
     private void saveInformation() {
-        String _name = name.getText().toString().trim();
-        String _phoneNumber = phoneNumber.getText().toString().trim();
-        String _unitNo = unitNo.getText().toString().trim();
-        String _serviceType = serviceType.getText().toString().trim();
 
         int selectedId = radioGroup.getCheckedRadioButtonId();
         accessButton = findViewById(selectedId);
-        String _accessType = accessButton.getText().toString().trim();
 
         Date date = Calendar.getInstance().getTime();
 //        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy hh:mm:ss a");
         SimpleDateFormat dateFormat = new SimpleDateFormat("hh:mm a");
-        String currentDate = dateFormat.format(date);
 
 
-        if (!hasValidationErrors(_name, _phoneNumber, _serviceType, _unitNo)) {
+        String correspondingname = name.getText().toString().trim();
+        String phone = phoneNumber.getText().toString().trim();
+        String requesteddate = dateFormat.format(date);
+        String requirenotificationonentry = accessButton.getText().toString().trim();
+        String servicerequesttype = serviceType.getText().toString().trim();
+        String unitnum = unitNo.getText().toString().trim();
+        String deliverytype = "undefined";
+        String delverynote = "undefined";
+        String adhocvisitorphoto = "undefined";
+        int complexid = 123;
+        String enddate = "undefined";
+        String notes_instructions = "undefined";
+        int requesterid = 234;
+        String requestertype = "undefined";
+        int serviceprovider_requestnumber = 456;
+        int serviceproviderid = 678;
+        int servicerequestormemberuserid = 955;
+        String startdate = "undefined";
+        boolean suspend = false;
+        boolean terminate = false;
 
-            CollectionReference serviceRequestReference = database.collection("Complex");
-            DocumentReference reference = serviceRequestReference.document("Resident");
-            CollectionReference serviceRequestCollectionReference = reference.collection("ServiceRequest");
 
-            ServiceRequestModels serviceRequestModels = new ServiceRequestModels(_name, _phoneNumber, _serviceType, _accessType, _unitNo, currentDate);
+        if (!hasValidationErrors(correspondingname, phone, servicerequesttype, unitnum)) {
+
+            CollectionReference databseCollectionReference = database.collection("Complex");
+            DocumentReference reference = databseCollectionReference.document("kwtfIEYu1k0AHJ9VXQ81");
+            CollectionReference serviceRequestCollectionReference = reference.collection("complex_servicerequests");
+
+            ServiceRequestModels serviceRequestModels = new ServiceRequestModels(correspondingname, phone,
+                    requesteddate, requirenotificationonentry,servicerequesttype, unitnum,
+                            deliverytype,delverynote,adhocvisitorphoto,complexid,enddate,
+                            notes_instructions,requesterid,requestertype,
+                            serviceprovider_requestnumber,serviceproviderid,
+                            servicerequestormemberuserid,startdate,suspend,terminate);
 
             serviceRequestCollectionReference.add(serviceRequestModels).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                 @Override

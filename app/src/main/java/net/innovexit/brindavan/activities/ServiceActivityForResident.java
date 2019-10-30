@@ -21,6 +21,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -47,7 +48,10 @@ public class ServiceActivityForResident extends AppCompatActivity {
     private EditText inputSearch;
     private List<MyRequestModel> items = new ArrayList<>();
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    CollectionReference reference = db.collection("Complex").document("Resident").collection("ServiceRequest");
+
+    CollectionReference databaseColectionReference = db.collection("Complex");
+    DocumentReference reference = databaseColectionReference.document("kwtfIEYu1k0AHJ9VXQ81");
+    CollectionReference serviceRequestCollectionReference = reference.collection("complex_servicerequests");
 
 
     @Override
@@ -120,12 +124,14 @@ public class ServiceActivityForResident extends AppCompatActivity {
     }
 
     private void getRequestList() {
-        reference.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        serviceRequestCollectionReference.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 for(DocumentSnapshot snapshot : Objects.requireNonNull(task.getResult())){
-                    MyRequestModel model = new MyRequestModel(snapshot.getString("name"), snapshot.getString("serviceType"),
-                            snapshot.getString("phoneNumber"),snapshot.getString("accessType"), snapshot.getString("unitNo"),snapshot.getString("currentDate"));
+                    MyRequestModel model = new MyRequestModel(snapshot.getString(
+                            "correspondingname"), snapshot.getString("servicerequesttype"),
+                            snapshot.getString("phone"),snapshot.getString("requirenotificationonentry"),
+                            snapshot.getString("unitnum"),snapshot.getString("requesteddate"));
 
                     items.add(model);
                     progressDialog.hide();
