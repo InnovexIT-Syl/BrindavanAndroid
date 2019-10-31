@@ -133,6 +133,41 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
+                        android:text="Start Date"
+                        android:textColor="#DFD3D3"
+                        android:textSize="22dp" />
+
+                    <EditText
+                        android:id="@+id/endDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/edit_text_style_2"
+                        android:hint="dd-mm-yyyy"
+                        android:padding="5dp"
+                        android:textColor="#0A0A0A" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="End Date"
+                        android:textColor="#DFD3D3"
+                        android:textSize="22dp" />
+
+                    <EditText
+                        android:id="@+id/startDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/edit_text_style_2"
+                        android:hint="dd-mm-yyyy"
+                        android:padding="5dp"
+                        android:textColor="#0A0A0A" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
                         android:text="Choose Action Type"
                         android:textColor="#DFD3D3"
                         android:textSize="22dp" />

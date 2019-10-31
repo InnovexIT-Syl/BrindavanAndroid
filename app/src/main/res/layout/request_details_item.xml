@@ -112,6 +112,27 @@
             android:textAlignment="center"
             android:padding="5dp"/>
 
+        <TextView
+            android:id="@+id/startDateOncard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColorSecondary"
+            android:text="Start Date"
+            android:layout_below="@+id/serviceProviderLtd"
+            android:textAlignment="center"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/endDateOncard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColorSecondary"
+            android:text="Start Date"
+            android:layout_below="@+id/startDateOncard"
+            android:textAlignment="center"
+            android:padding="5dp"/>
+
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

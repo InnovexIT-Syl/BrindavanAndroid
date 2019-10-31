@@ -4,8 +4,8 @@ import com.google.firebase.firestore.DocumentReference;
 
 public class MyRequestModel {
 
-    private String servicePersonName, personJob, phoneNumber, accessType, serviceDate,
-    serviceUnit;
+    private String servicePersonName, personJob, phoneNumber, accessType, serviceDate, startDate,
+            endDate, serviceUnit;
     private DocumentReference docRef;
     String isSuspend;
 
@@ -25,9 +25,28 @@ public class MyRequestModel {
         isSuspend = suspend;
     }
 
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }
+
+
+
     public MyRequestModel(String servicePersonName, String personJob, String phoneNumber,
                           String accessType, String serviceUnit, String serviceDate,
-                          DocumentReference docRef, String isSuspend) {
+                          DocumentReference docRef, String isSuspend, String startDate,
+                          String endDate) {
         this.servicePersonName = servicePersonName;
         this.personJob = personJob;
         this.phoneNumber = phoneNumber;
@@ -36,6 +55,8 @@ public class MyRequestModel {
         this.serviceDate = serviceDate;
         this.docRef = docRef;
         this.isSuspend = isSuspend;
+        this.startDate = startDate;
+        this.endDate = endDate;
     }
 
 

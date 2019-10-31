@@ -80,6 +80,8 @@ public class MyRequestsAdapter extends RecyclerView.Adapter<MyRequestsAdapter.My
         holder.setServiceCategory(requestDetailsModel.getPersonJob());
         holder.setServiceDate(requestDetailsModel.getServiceDate());
         holder.setServiceUnit(requestDetailsModel.getServiceUnit());
+        holder.setStartDate("Start Date: "+requestDetailsModel.getStartDate());
+        holder.setEndDate("End Date: "+requestDetailsModel.getEndDate());
 
         if (requestDetailsModel.isSuspend().equals("true")){
             holder.allow.setVisibility(View.GONE);
@@ -245,7 +247,7 @@ public class MyRequestsAdapter extends RecyclerView.Adapter<MyRequestsAdapter.My
     class MyRequestDetailsViewHolder extends RecyclerView.ViewHolder{
 
         private TextView servicePersonName, phoneNumber, serviceCompany, serviceCategory,
-        serviceDate, serviceUnit, requestStatus;
+        serviceDate, serviceUnit, requestStatus, startDate, endDate;
         RelativeLayout expandLayout;
         RelativeLayout headerLayout;
         ImageView callResident, directPass;
@@ -268,8 +270,11 @@ public class MyRequestsAdapter extends RecyclerView.Adapter<MyRequestsAdapter.My
             allow = itemView.findViewById(R.id.allowBtn);
             reject = itemView.findViewById(R.id.rejectBtn);
             requestStatus = itemView.findViewById(R.id.requestStatus);
+            startDate = itemView.findViewById(R.id.startDateOncard);
+            endDate = itemView.findViewById(R.id.endDateOncard);
 
         }
+
        private void setServicePersonName(String name) {
             servicePersonName.setText(name);
         }
@@ -291,6 +296,14 @@ public class MyRequestsAdapter extends RecyclerView.Adapter<MyRequestsAdapter.My
 
         private void setServiceUnit(String serviceUnit) {
             this.serviceUnit.setText(serviceUnit);
+        }
+
+        public void setStartDate(String startDate) {
+            this.startDate.setText(startDate);
+        }
+
+        public void setEndDate(String endDate) {
+            this.endDate.setText(endDate);
         }
     }
 }

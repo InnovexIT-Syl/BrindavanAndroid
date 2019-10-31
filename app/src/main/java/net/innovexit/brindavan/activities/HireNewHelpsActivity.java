@@ -1,13 +1,17 @@
 package net.innovexit.brindavan.activities;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -27,7 +31,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class HireNewHelpsActivity extends AppCompatActivity {
-    EditText name, phoneNumber, unitNo, serviceType;
+    EditText name, phoneNumber, unitNo, serviceType, startDate, endDate;
     Button addRequest;
     private FirebaseFirestore database;
     private RadioGroup radioGroup;
@@ -49,6 +53,10 @@ public class HireNewHelpsActivity extends AppCompatActivity {
         unitNo = findViewById(R.id.unitNumber);
         unitNo.setText("");
 
+        startDate = findViewById(R.id.startDate);
+        endDate = findViewById(R.id.endDate);
+
+
         addRequest = findViewById(R.id.addRequest);
 
         Intent intent = getIntent();
@@ -67,6 +75,8 @@ public class HireNewHelpsActivity extends AppCompatActivity {
         });
 
     }
+
+
 
     private boolean hasValidationErrors(String _name, String _phoneNumber, String _serviceType, String _unitNo) {
         if (_name.isEmpty()) {
@@ -101,8 +111,8 @@ public class HireNewHelpsActivity extends AppCompatActivity {
         accessButton = findViewById(selectedId);
 
         Date date = Calendar.getInstance().getTime();
-//        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy hh:mm:ss a");
-        SimpleDateFormat dateFormat = new SimpleDateFormat("hh:mm a");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MMM dd yyyy");
+//        SimpleDateFormat dateFormat = new SimpleDateFormat("hh:mm a");
 
 
         String correspondingname = name.getText().toString().trim();
@@ -115,14 +125,14 @@ public class HireNewHelpsActivity extends AppCompatActivity {
         String delverynote = "undefined";
         String adhocvisitorphoto = "undefined";
         int complexid = 123;
-        String enddate = "undefined";
+        String enddate = endDate.getText().toString().trim();
         String notes_instructions = "undefined";
         int requesterid = 234;
         String requestertype = "undefined";
         int serviceprovider_requestnumber = 456;
         int serviceproviderid = 678;
         int servicerequestormemberuserid = 955;
-        String startdate = "undefined";
+        String startdate = startDate.getText().toString().trim();
         String suspend = "undefined";
         boolean terminate = false;
 
