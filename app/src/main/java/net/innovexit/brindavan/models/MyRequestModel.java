@@ -4,8 +4,8 @@ import com.google.firebase.firestore.DocumentReference;
 
 public class MyRequestModel {
 
-    private String servicePersonName, personJob, phoneNumber, accessType, serviceDate, startDate,
-            endDate, serviceUnit;
+    private String servicePersonName, personJob, phoneNumber, accessType, serviceDate,serviceUnit,startDate,
+            endDate;
     private DocumentReference docRef;
     String isSuspend;
 

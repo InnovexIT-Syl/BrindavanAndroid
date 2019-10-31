@@ -84,7 +84,9 @@ public class MyRequestsAdapter extends RecyclerView.Adapter<MyRequestsAdapter.My
             holder.reject.setVisibility(View.GONE);
             holder.requestStatus.setVisibility(View.VISIBLE);
             holder.requestStatus.setText("Rejected");
-        }if (requestDetailsModel.isSuspend().equals("false")){
+        }
+        
+        if (requestDetailsModel.isSuspend().equals("false")){
             holder.allow.setVisibility(View.GONE);
             holder.reject.setVisibility(View.GONE);
             holder.requestStatus.setVisibility(View.VISIBLE);
@@ -294,11 +296,11 @@ public class MyRequestsAdapter extends RecyclerView.Adapter<MyRequestsAdapter.My
             this.serviceUnit.setText(serviceUnit);
         }
 
-        public void setStartDate(String startDate) {
+        private void setStartDate(String startDate) {
             this.startDate.setText(startDate);
         }
 
-        public void setEndDate(String endDate) {
+        private void setEndDate(String endDate) {
             this.endDate.setText(endDate);
         }
     }

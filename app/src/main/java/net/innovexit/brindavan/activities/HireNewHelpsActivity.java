@@ -67,6 +67,8 @@ public class HireNewHelpsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 saveInformation();
+                startActivity(new Intent(getApplicationContext(), ServiceActivityForResident.class));
+
             }
         });
 
@@ -155,8 +157,7 @@ public class HireNewHelpsActivity extends AppCompatActivity {
                     unitNo.setText("");
 
                     Toast.makeText(HireNewHelpsActivity.this, "Service Request Data Added", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(getApplicationContext(), ServiceActivityForResident.class));
-                }
+              }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {

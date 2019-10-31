@@ -105,8 +105,8 @@ public class ServiceActivity extends AppCompatActivity {
                               "correspondingname"), snapshot.getString("servicerequesttype"),
                               snapshot.getString("phone"),snapshot.getString("requirenotificationonentry"),
                               snapshot.getString("unitnum"),snapshot.getString("requesteddate"),
-                              snapshot.getReference(),snapshot.getString("suspend"),
-                              snapshot.getString("startdate"),snapshot.getString("enddate"));
+                              snapshot.getReference(), snapshot.getString("suspend"),
+                              snapshot.getString("startdate"), snapshot.getString("enddate"));
 
                       items.add(model);
                       progressDialog.hide();
